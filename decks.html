@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decks — AutoscaleWorks</title>
+  <meta name="description" content="Technical presentations on AI infrastructure, LLM serving with vLLM, KubeRay, Kubernetes, and production GPU workloads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleWorks
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="decks.html" class="active">Decks</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Technical Presentations</span>
+      <h1>Decks &amp; Deep Dives</h1>
+      <p>In-depth technical presentations on AI infrastructure, LLM serving, and Kubernetes-native ML operations.</p>
+    </div>
+  </section>
+
+  <!-- Deck 1: vLLM + KubeRay -->
+  <section>
+    <div class="container">
+      <div class="cta-section" style="text-align: left; padding: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <span class="section-label">Featured Deck</span>
+            <h2>Efficient LLM Deployment: vLLM + Ray Serve + KubeRay + Kubernetes</h2>
+          </div>
+          <div class="card-tags">
+            <span class="tag">vLLM</span>
+            <span class="tag">KubeRay</span>
+            <span class="tag">Ray Serve</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">GPU</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A comprehensive technical deep dive into the end-to-end architecture for production LLM serving. Covers the full stack from vLLM inference engine through Ray Serve orchestration, KubeRay Kubernetes operator, and GPU-accelerated Kubernetes clusters.</p>
+
+            <h3 style="margin-bottom: 1rem;">Topics Covered</h3>
+            <ul class="values-list">
+              <li><span class="check">&#10003;</span> vLLM PagedAttention, continuous batching, and tensor parallelism</li>
+              <li><span class="check">&#10003;</span> Broad model support: Llama 3.1, DeepSeek, Qwen, Pixtral VLM</li>
+              <li><span class="check">&#10003;</span> PyTorch as hardware abstraction across NVIDIA, AMD, Intel, and TPU</li>
+              <li><span class="check">&#10003;</span> Ray Serve request routing, load balancing, and autoscaling</li>
+              <li><span class="check">&#10003;</span> KubeRay CRDs: RayCluster, RayService, RayJob</li>
+              <li><span class="check">&#10003;</span> Production deployment manifests and scaling patterns</li>
+              <li><span class="check">&#10003;</span> Observability stack: vLLM + Ray + Kubernetes metrics</li>
+              <li><span class="check">&#10003;</span> Performance benchmarks: 2.2K tokens/s per H200</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card" style="padding: 2rem; text-align: center; margin-bottom: 1.5rem;">
+              <div style="font-size: 4rem; margin-bottom: 1rem;">&#127916;</div>
+              <p style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text);">17 Slides</p>
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Interactive Reveal.js Presentation</p>
+              <a href="decks/vllm-kuberay-llm-serving.html" class="btn btn-primary" style="display: inline-block;">View Presentation &#8594;</a>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="margin-bottom: 0.75rem; font-weight: 700;">Navigation</h4>
+              <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; line-height: 2;">
+                <li><span style="color: var(--accent);">&#8594; / &#8592;</span> &nbsp; Arrow keys to navigate slides</li>
+                <li><span style="color: var(--accent);">Esc</span> &nbsp; Overview / grid view</li>
+                <li><span style="color: var(--accent);">F</span> &nbsp; Fullscreen mode</li>
+                <li><span style="color: var(--accent);">S</span> &nbsp; Speaker notes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">Based on CNCF presentation by Lily (Xiaoxuan) Liu &mdash; &ldquo;Efficient LLM Deployment: A Unified Approach with Ray, vLLM, and Kubernetes&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Want Us to Present to Your Team?</h2>
+        <p>We deliver custom technical deep dives on AI infrastructure, LLM serving architecture, and Kubernetes-native ML ops.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleWorks &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="decks.html">Decks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
