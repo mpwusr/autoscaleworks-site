@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — AutoscaleAI</title>
+  <meta name="description" content="AI infrastructure services: self-hosted LLM serving on vLLM, GPU Kubernetes clusters, agentic RAG pipelines, and AI-powered security systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleAI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Services</span>
+      <h1>AI Infrastructure &amp; Intelligent Systems</h1>
+      <p>End-to-end engineering services from GPU provisioning to production model serving and security automation.</p>
+    </div>
+  </section>
+
+  <!-- Service 1: LLM Serving -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-label">01</span>
+          <h2>Self-Hosted LLM Serving</h2>
+          <p>Deploy and operate large language models on your own infrastructure. We build production vLLM clusters on GKE and OpenShift with GPU autoscaling, model weight caching, and OpenAI-compatible API endpoints.</p>
+          <p>Keep your data private, control your costs, and eliminate vendor lock-in. Our deployments serve Llama, Mistral, Qwen, and other open-weight models with enterprise-grade reliability.</p>
+          <div class="card-tags" style="margin-top: 1.5rem;">
+            <span class="tag">vLLM</span>
+            <span class="tag">GKE</span>
+            <span class="tag">OpenShift AI</span>
+            <span class="tag">L4 / H100</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Helm</span>
+          </div>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> GPU node pool provisioning with autoscaling (0 to N)</li>
+            <li><span class="check">&#10003;</span> Model weight caching on GCS / S3 for fast cold starts</li>
+            <li><span class="check">&#10003;</span> Prefix caching and continuous batching for throughput</li>
+            <li><span class="check">&#10003;</span> HPA based on request queue depth</li>
+            <li><span class="check">&#10003;</span> Prometheus metrics and Grafana dashboards</li>
+          </ul>
+        </div>
+        <div class="about-image">&#9881;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: RAG -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">&#128270;</div>
+        <div class="about-content">
+          <span class="section-label">02</span>
+          <h2>Agentic RAG Systems</h2>
+          <p>Build intelligent retrieval-augmented generation pipelines that go beyond simple search. Our agentic RAG systems use tool-calling agents, persistent memory, and multi-step reasoning to answer complex queries over your data.</p>
+          <p>From vector database selection and embedding strategy to agent loop design and tool integration, we architect the full pipeline.</p>
+          <div class="card-tags" style="margin-top: 1.5rem;">
+            <span class="tag">LangChain</span>
+            <span class="tag">PGVector</span>
+            <span class="tag">CLIP</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Redis</span>
+          </div>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Vector database deployment (PGVector, Pinecone, Weaviate)</li>
+            <li><span class="check">&#10003;</span> Multi-modal embedding (text, image, audio)</li>
+            <li><span class="check">&#10003;</span> ReAct agent loop with native tool calling</li>
+            <li><span class="check">&#10003;</span> Persistent conversation memory with fact extraction</li>
+            <li><span class="check">&#10003;</span> Streaming responses via WebSocket / SSE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Security -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-label">03</span>
+          <h2>AI-Powered Security &amp; Surveillance</h2>
+          <p>Intelligent surveillance systems that combine computer vision, natural language processing, and real-time alerting. Query your security footage in plain English and get instant, context-aware answers.</p>
+          <p>Our CV pipelines process camera feeds through multi-model detection (YOLO, Mask R-CNN), generate embeddings (CLIP) and captions (BLIP), and store everything in a searchable vector database.</p>
+          <div class="card-tags" style="margin-top: 1.5rem;">
+            <span class="tag">YOLO</span>
+            <span class="tag">Mask R-CNN</span>
+            <span class="tag">CLIP</span>
+            <span class="tag">BLIP</span>
+            <span class="tag">PGVector</span>
+          </div>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Real-time object detection and classification</li>
+            <li><span class="check">&#10003;</span> Friendly / unfriendly entity classification</li>
+            <li><span class="check">&#10003;</span> Natural language querying over detection history</li>
+            <li><span class="check">&#10003;</span> Automated alerting and threat escalation</li>
+            <li><span class="check">&#10003;</span> GPU-accelerated batch processing on Kubernetes</li>
+          </ul>
+        </div>
+        <div class="about-image">&#128373;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 4: Infrastructure -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">&#9729;</div>
+        <div class="about-content">
+          <span class="section-label">04</span>
+          <h2>Kubernetes &amp; Cloud Infrastructure</h2>
+          <p>Production Kubernetes clusters designed for AI workloads. We handle the entire infrastructure lifecycle: VPC networking, GPU node pools, IAM, storage, CI/CD, and monitoring.</p>
+          <p>Everything is codified in Terraform and Helm, version-controlled in Git, and deployed through automated pipelines. No manual kubectl required.</p>
+          <div class="card-tags" style="margin-top: 1.5rem;">
+            <span class="tag">Terraform</span>
+            <span class="tag">GKE</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">Helm</span>
+            <span class="tag">ArgoCD</span>
+          </div>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> GKE, EKS, and OpenShift cluster provisioning</li>
+            <li><span class="check">&#10003;</span> GPU node pools with spot/preemptible instances</li>
+            <li><span class="check">&#10003;</span> Workload Identity and least-privilege IAM</li>
+            <li><span class="check">&#10003;</span> Istio service mesh and network policies</li>
+            <li><span class="check">&#10003;</span> Cost optimization and right-sizing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Engagement</span>
+        <h2>How We Work</h2>
+        <p>Flexible engagement models tailored to your needs.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128640;</div>
+          <h3>Project-Based</h3>
+          <p>Fixed-scope engagements with clear deliverables. Ideal for migrations, new deployments, and architecture reviews.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128257;</div>
+          <h3>Retainer</h3>
+          <p>Ongoing support for your AI infrastructure. Monitoring, scaling, upgrades, and on-call incident response.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#127891;</div>
+          <h3>Advisory</h3>
+          <p>Architecture reviews, technology selection, and strategic guidance for your AI and infrastructure roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Tell us about your project and we'll scope the right engagement for your needs.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Project &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleAI &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

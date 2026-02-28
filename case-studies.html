@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies — AutoscaleAI</title>
+  <meta name="description" content="Real-world AI infrastructure projects: surveillance RAG on vLLM + GKE, GPU cluster migrations, and intelligent security system deployments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleAI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Case Studies</span>
+      <h1>Real Projects. Real Infrastructure.</h1>
+      <p>Detailed walkthroughs of production AI deployments we've engineered and delivered.</p>
+    </div>
+  </section>
+
+  <!-- Case Study 1: Surveillance RAG -->
+  <section>
+    <div class="container">
+      <div class="cta-section" style="text-align: left; padding: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <span class="section-label">Featured Project</span>
+            <h2>Surveillance RAG on vLLM + GKE</h2>
+          </div>
+          <div class="card-tags">
+            <span class="tag">vLLM</span>
+            <span class="tag">GKE</span>
+            <span class="tag">PGVector</span>
+            <span class="tag">YOLO</span>
+            <span class="tag">CLIP</span>
+            <span class="tag">Llama 3.1</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <div>
+            <h3 style="margin-bottom: 1rem;">Challenge</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">A physical security surveillance system relied on cloud LLM APIs (GPT-4, Grok) and Pinecone for vector search. This created data privacy concerns, unpredictable costs, and vendor lock-in. The system needed to move to fully self-hosted infrastructure while maintaining low-latency, multi-modal search over thousands of surveillance detections.</p>
+
+            <h3 style="margin-bottom: 1rem;">Solution</h3>
+            <p style="color: var(--text-muted);">We migrated the entire stack to Google GKE with self-hosted Llama 3.1 8B on vLLM, replaced Pinecone with PGVector on PostgreSQL, containerized the CV detection pipeline and RAG chat as separate microservices, and codified everything in Terraform and Helm.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 1rem;">Architecture</h3>
+            <ul class="values-list">
+              <li><span class="check">&#10003;</span> vLLM serving Llama 3.1 8B Instruct on NVIDIA L4 GPU</li>
+              <li><span class="check">&#10003;</span> PGVector on PostgreSQL 16 with 512-dim CLIP embeddings</li>
+              <li><span class="check">&#10003;</span> CV Pipeline: YOLO + Mask R-CNN detection, CLIP embedding, BLIP captioning</li>
+              <li><span class="check">&#10003;</span> ReAct agent loop with native tool calling for structured queries</li>
+              <li><span class="check">&#10003;</span> FastAPI service with OpenAI-compatible endpoints</li>
+              <li><span class="check">&#10003;</span> GCS Fuse CSI for surveillance image access</li>
+              <li><span class="check">&#10003;</span> Terraform IaC for GKE, VPC, IAM, and GCS</li>
+              <li><span class="check">&#10003;</span> Helm chart for one-command deployment</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Results</h3>
+            <div class="grid-2" style="gap: 1rem; margin-top: 1rem;">
+              <div class="card" style="text-align: center; padding: 1.5rem;">
+                <span class="hero-stat"><span class="number" style="font-size: 1.5rem;">100%</span></span>
+                <p style="font-size: 0.85rem;">Self-hosted, no cloud LLM APIs</p>
+              </div>
+              <div class="card" style="text-align: center; padding: 1.5rem;">
+                <span class="hero-stat"><span class="number" style="font-size: 1.5rem;">~60%</span></span>
+                <p style="font-size: 0.85rem;">Cost reduction vs. cloud APIs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study 2: LLM Platform -->
+  <section>
+    <div class="container">
+      <div class="cta-section" style="text-align: left; padding: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <span class="section-label">Infrastructure</span>
+            <h2>Multi-Tenant LLM Platform on GKE</h2>
+          </div>
+          <div class="card-tags">
+            <span class="tag">GKE</span>
+            <span class="tag">vLLM</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Istio</span>
+            <span class="tag">H100</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <div>
+            <h3 style="margin-bottom: 1rem;">Challenge</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">An enterprise needed a shared LLM serving platform that could host multiple models simultaneously, isolate tenant traffic, and autoscale GPU resources based on demand &mdash; all while maintaining sub-second response times.</p>
+
+            <h3 style="margin-bottom: 1rem;">Solution</h3>
+            <p style="color: var(--text-muted);">We designed a multi-model vLLM deployment on GKE with Istio service mesh for tenant isolation, prefix-aware request routing, and GPU autoscaling from 0 to N based on queue depth. Terraform modules made the platform reproducible across environments.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 1rem;">Key Deliverables</h3>
+            <ul class="values-list">
+              <li><span class="check">&#10003;</span> GKE cluster with H100 and L4 GPU node pools</li>
+              <li><span class="check">&#10003;</span> Istio service mesh with per-tenant rate limiting</li>
+              <li><span class="check">&#10003;</span> HPA scaling on vLLM request queue metrics</li>
+              <li><span class="check">&#10003;</span> GCS model weight cache for fast cold starts</li>
+              <li><span class="check">&#10003;</span> Prometheus + Grafana monitoring dashboards</li>
+              <li><span class="check">&#10003;</span> Terraform modules for multi-env deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study 3: CV Pipeline -->
+  <section>
+    <div class="container">
+      <div class="cta-section" style="text-align: left; padding: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <span class="section-label">Computer Vision</span>
+            <h2>Automated Security Camera Analytics</h2>
+          </div>
+          <div class="card-tags">
+            <span class="tag">YOLO</span>
+            <span class="tag">Mask R-CNN</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">GPU</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <div>
+            <h3 style="margin-bottom: 1rem;">Challenge</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">A residential security operation needed automated analysis of camera feeds &mdash; detecting people, vehicles, and animals, classifying them as known/unknown entities, and enabling natural language search over detection history.</p>
+
+            <h3 style="margin-bottom: 1rem;">Solution</h3>
+            <p style="color: var(--text-muted);">We built a Kubernetes CronJob pipeline that processes images through a multi-model stack (YOLO for detection, Mask R-CNN for segmentation, CLIP for embedding, BLIP for captioning), stores results in PGVector, and exposes them through a RAG-powered chat interface.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 1rem;">Pipeline Architecture</h3>
+            <ul class="values-list">
+              <li><span class="check">&#10003;</span> GCS-mounted image ingestion via CSI driver</li>
+              <li><span class="check">&#10003;</span> Multi-model detection: YOLO v8 + Mask R-CNN</li>
+              <li><span class="check">&#10003;</span> CLIP 512-dim embeddings for semantic search</li>
+              <li><span class="check">&#10003;</span> BLIP auto-captioning for natural language context</li>
+              <li><span class="check">&#10003;</span> Friendly/unfriendly entity classification</li>
+              <li><span class="check">&#10003;</span> Batch upsert to PGVector with IVFFlat indexing</li>
+              <li><span class="check">&#10003;</span> L4 GPU spot instances for cost efficiency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Have a Similar Challenge?</h2>
+        <p>Let's discuss how we can architect and deploy the right solution for your AI infrastructure needs.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleAI &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

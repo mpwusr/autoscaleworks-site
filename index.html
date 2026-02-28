@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoscaleAI — AI Infrastructure &amp; Intelligent Security</title>
+  <meta name="description" content="Production-grade AI infrastructure, LLM serving, and intelligent security systems. From GPU clusters to agentic RAG pipelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleAI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Now deploying on GKE &amp; OpenShift AI
+        </div>
+        <h1>
+          AI Infrastructure<br>
+          Built for <span class="gradient-text">Production</span>
+        </h1>
+        <p class="hero-subtitle">
+          We design, build, and operate self-hosted LLM serving platforms, intelligent surveillance systems, and agentic RAG pipelines on Kubernetes. From GPU clusters to real-time inference.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Start a Project &#8594;</a>
+          <a href="services.html" class="btn btn-outline">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="number">vLLM</span>
+            <span class="label">Self-hosted LLM Serving</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">GKE</span>
+            <span class="label">GPU Kubernetes Clusters</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">RAG</span>
+            <span class="label">Agentic Retrieval Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-logos">
+        <span class="trust-logo">Kubernetes</span>
+        <span class="trust-logo">Google Cloud</span>
+        <span class="trust-logo">NVIDIA</span>
+        <span class="trust-logo">Red Hat OpenShift</span>
+        <span class="trust-logo">Terraform</span>
+        <span class="trust-logo">PyTorch</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2>Full-Stack AI Engineering</h2>
+        <p>From infrastructure provisioning to model deployment to intelligent applications. We handle the entire stack.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card service-card">
+          <div class="card-icon">&#9881;</div>
+          <h3>LLM Serving Infrastructure</h3>
+          <p>Production vLLM deployments on GKE and OpenShift with GPU autoscaling, model caching, and OpenAI-compatible APIs.</p>
+          <div class="card-tags">
+            <span class="tag">vLLM</span>
+            <span class="tag">GKE</span>
+            <span class="tag">L4/H100</span>
+            <span class="tag">Terraform</span>
+          </div>
+        </div>
+        <div class="card service-card">
+          <div class="card-icon">&#128270;</div>
+          <h3>Agentic RAG Systems</h3>
+          <p>Retrieval-augmented generation with tool-calling agents, vector databases, persistent memory, and real-time data pipelines.</p>
+          <div class="card-tags">
+            <span class="tag">LangChain</span>
+            <span class="tag">PGVector</span>
+            <span class="tag">CLIP</span>
+            <span class="tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="card service-card">
+          <div class="card-icon">&#128373;</div>
+          <h3>AI-Powered Security</h3>
+          <p>Computer vision surveillance with real-time object detection, threat classification, and natural language querying over security footage.</p>
+          <div class="card-tags">
+            <span class="tag">YOLO</span>
+            <span class="tag">Mask R-CNN</span>
+            <span class="tag">BLIP</span>
+            <span class="tag">CLIP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Approach</span>
+        <h2>Infrastructure as Code. AI as a Service.</h2>
+        <p>Every deployment is reproducible, version-controlled, and built for scale from day one.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#9783;</div>
+          <h3>Assess</h3>
+          <p>Evaluate your workloads, GPU requirements, and model selection to design the right architecture.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128736;</div>
+          <h3>Build</h3>
+          <p>Terraform, Kubernetes manifests, Helm charts, Dockerfiles. Production-ready from the first commit.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#9889;</div>
+          <h3>Deploy</h3>
+          <p>GPU node pools, model serving, vector databases, and application containers. All orchestrated on K8s.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128200;</div>
+          <h3>Operate</h3>
+          <p>Monitoring, autoscaling, cost optimization. Your AI infrastructure runs reliably at any scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Case Study -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <span class="section-label">Featured Project</span>
+        <h2>Surveillance RAG on vLLM + GKE</h2>
+        <p>Full-stack migration of a physical security surveillance system to self-hosted Llama 3.1 on Kubernetes with PGVector, GPU inference, and an agentic RAG pipeline.</p>
+        <a href="case-studies.html" class="btn btn-primary">Read the Case Study &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Ready to Scale Your AI?</h2>
+        <p>From proof-of-concept to production GPU clusters. Let's build your AI infrastructure together.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleAI &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

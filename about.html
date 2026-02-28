@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — AutoscaleAI</title>
+  <meta name="description" content="AutoscaleAI is a boutique AI infrastructure consultancy specializing in self-hosted LLM deployments, GPU Kubernetes clusters, and intelligent security systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleAI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">About Us</span>
+      <h1>Engineering AI for the Real World</h1>
+      <p>We build production AI systems that run on your infrastructure, under your control, at scale.</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Who We Are</h2>
+          <p>AutoscaleAI is a boutique AI infrastructure consultancy based in Saddle River, New Jersey. We specialize in taking AI projects from prototype to production on Kubernetes &mdash; with a focus on self-hosted LLM serving, GPU cluster management, and intelligent security systems.</p>
+          <p>Founded by engineers with deep experience across cloud infrastructure, machine learning operations, and physical security technology, we bridge the gap between cutting-edge AI research and enterprise-grade deployment.</p>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Self-hosted first &mdash; your models, your infrastructure, your data</li>
+            <li><span class="check">&#10003;</span> Infrastructure as Code &mdash; every deployment is reproducible</li>
+            <li><span class="check">&#10003;</span> Production-grade from day one &mdash; not a demo, not a PoC</li>
+            <li><span class="check">&#10003;</span> Full-stack ownership &mdash; from Terraform to model inference</li>
+          </ul>
+        </div>
+        <div class="about-image">&#9881;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Core Expertise</span>
+        <h2>What Sets Us Apart</h2>
+        <p>Deep, hands-on experience across the entire AI infrastructure stack.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">&#9729;</div>
+          <h3>Cloud &amp; Kubernetes</h3>
+          <p>GKE, OpenShift, EKS. GPU node pools, autoscaling, Workload Identity, service mesh, and multi-cluster federation.</p>
+          <div class="card-tags">
+            <span class="tag">GKE</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Helm</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#129302;</div>
+          <h3>LLM &amp; ML Operations</h3>
+          <p>vLLM serving, model quantization, KV cache optimization, batch inference, and OpenAI-compatible API endpoints for any model.</p>
+          <div class="card-tags">
+            <span class="tag">vLLM</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">NVIDIA</span>
+            <span class="tag">HuggingFace</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128274;</div>
+          <h3>Security &amp; Surveillance</h3>
+          <p>Computer vision pipelines, real-time threat detection, natural language querying over security footage, and physical security automation.</p>
+          <div class="card-tags">
+            <span class="tag">YOLO</span>
+            <span class="tag">CLIP</span>
+            <span class="tag">BLIP</span>
+            <span class="tag">PGVector</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Technology</span>
+        <h2>Our Stack</h2>
+        <p>We work with best-in-class open source tools and cloud-native platforms.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align: center;">
+          <h3>Infrastructure</h3>
+          <p>Terraform, Pulumi, Ansible, Packer</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3>Orchestration</h3>
+          <p>Kubernetes, Helm, Kustomize, ArgoCD</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3>AI / ML</h3>
+          <p>vLLM, PyTorch, LangChain, CLIP, YOLO</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3>Data</h3>
+          <p>PostgreSQL, PGVector, Redis, GCS, S3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Let's Build Together</h2>
+        <p>Whether you're deploying your first LLM or scaling GPU clusters across regions, we can help.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleAI &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

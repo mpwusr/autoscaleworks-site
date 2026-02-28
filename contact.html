@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — AutoscaleAI</title>
+  <meta name="description" content="Get in touch with AutoscaleAI. Let's discuss your AI infrastructure project, LLM deployment, or security system needs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AutoscaleAI
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h1>Let's Talk Infrastructure</h1>
+      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company (optional)">
+          </div>
+          <div class="form-group">
+            <label for="service">What are you interested in?</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="llm-serving">Self-Hosted LLM Serving</option>
+              <option value="rag">Agentic RAG Systems</option>
+              <option value="security">AI-Powered Security</option>
+              <option value="infrastructure">Kubernetes &amp; Cloud Infrastructure</option>
+              <option value="advisory">Architecture Advisory</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" placeholder="Describe your project, current setup, goals, and timeline..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message &#8594;</button>
+        </form>
+
+        <div class="contact-info">
+          <div>
+            <h3 style="margin-bottom: 1.5rem;">Get in Touch</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Whether you're exploring self-hosted LLMs, planning a GPU cluster migration, or building intelligent security systems &mdash; we'd love to hear about your project.</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">&#9993;</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@autoscaleai.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">&#127758;</div>
+            <div>
+              <h4>Location</h4>
+              <p>Saddle River, New Jersey</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">&#128337;</div>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24 hours on business days</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">&#128187;</div>
+            <div>
+              <h4>GitHub</h4>
+              <p>github.com/mpwusr</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <h3 style="margin-bottom: 1rem;">Typical Engagements</h3>
+            <div class="card-tags">
+              <span class="tag">vLLM on GKE</span>
+              <span class="tag">GPU Clusters</span>
+              <span class="tag">RAG Pipelines</span>
+              <span class="tag">CV Surveillance</span>
+              <span class="tag">Terraform IaC</span>
+              <span class="tag">Helm Charts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>What GPU types do you work with?</h3>
+          <p>Primarily NVIDIA L4 and H100 on GKE, but we also deploy on A100, T4, and AMD MI300X depending on workload requirements and cloud availability.</p>
+        </div>
+        <div class="card">
+          <h3>Do you work with cloud providers other than GCP?</h3>
+          <p>Yes. While GKE is our primary platform, we also deploy on AWS (EKS), Azure (AKS), and Red Hat OpenShift AI. Our Terraform modules are cloud-agnostic where possible.</p>
+        </div>
+        <div class="card">
+          <h3>What models can you deploy with vLLM?</h3>
+          <p>Any model supported by vLLM: Llama 3.x, Mistral, Mixtral, Qwen, Phi, DeepSeek, and more. We handle quantization, caching, and optimization for your specific use case.</p>
+        </div>
+        <div class="card">
+          <h3>What's the typical project timeline?</h3>
+          <p>A standard vLLM + RAG deployment on GKE typically takes 2-4 weeks from kickoff to production. Complex multi-model systems or large migrations may take longer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Ready to Scale Your AI?</h2>
+        <p>From proof-of-concept to production GPU clusters. Let's build your AI infrastructure together.</p>
+        <a href="mailto:info@autoscaleai.com" class="btn btn-primary">Email Us Directly &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">&copy; 2025 AutoscaleAI &mdash; Saddle River Consulting LLC</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
