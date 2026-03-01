@@ -9,6 +9,298 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Deck Teaser Styles ──────────────────────────────────── */
+    .deck-hero {
+      padding: 10rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .deck-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    }
+    .deck-hero .container { position: relative; }
+
+    .deck-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .deck-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .deck-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .deck-meta-item .icon {
+      font-size: 1rem;
+    }
+
+    /* Slide preview cards */
+    .slide-preview {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-preview::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    }
+    .slide-preview .slide-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .slide-preview h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .slide-preview p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* Metric highlight */
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .metric-card .value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+    .metric-card .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    /* Blurred preview area */
+    .locked-preview {
+      position: relative;
+      margin-top: 2rem;
+    }
+    .locked-preview .blur-overlay {
+      position: relative;
+    }
+    .locked-preview .blur-overlay::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    /* Gate form */
+    .gate-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      border-radius: var(--radius);
+      padding: 3rem;
+      text-align: center;
+      max-width: 600px;
+      margin: -2rem auto 0;
+      position: relative;
+      z-index: 10;
+    }
+    .gate-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .gate-section p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+    .gate-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .gate-form label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .gate-form input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .gate-form input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .gate-form input::placeholder {
+      color: #475569;
+    }
+    .gate-form .submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-main);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .gate-form .submit-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    }
+    .gate-form .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .gate-privacy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .gate-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    /* Success state */
+    .download-section {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(59, 130, 246, 0.04));
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      border-radius: var(--radius);
+      max-width: 600px;
+      margin: 2rem auto 0;
+    }
+    .download-section.visible {
+      display: block;
+    }
+    .download-section .success-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .download-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .download-section p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .download-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Stack diagram mini */
+    .stack-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin: 1rem 0;
+    }
+    .stack-mini .layer {
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .metric-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gate-form .form-row {
+        grid-template-columns: 1fr;
+      }
+      .gate-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,70 +323,186 @@
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
+  <!-- Deck Hero -->
+  <section class="deck-hero">
     <div class="container">
-      <span class="section-label">Technical Presentations</span>
-      <h1>Decks &amp; Deep Dives</h1>
-      <p>In-depth technical presentations on AI infrastructure, LLM serving, and Kubernetes-native ML operations.</p>
+      <span class="section-label">Technical Deep Dive</span>
+      <div class="deck-title-row">
+        <div>
+          <h1 style="font-size: clamp(1.8rem, 4vw, 2.6rem);">Efficient LLM Deployment:<br>vLLM + Ray Serve + KubeRay + Kubernetes</h1>
+          <div class="deck-meta">
+            <div class="deck-meta-item"><span class="icon">&#128196;</span> 17 Slides</div>
+            <div class="deck-meta-item"><span class="icon">&#9201;</span> ~25 min read</div>
+            <div class="deck-meta-item"><span class="icon">&#127891;</span> Advanced</div>
+          </div>
+        </div>
+        <div class="card-tags" style="margin-top: 0;">
+          <span class="tag">vLLM</span>
+          <span class="tag">KubeRay</span>
+          <span class="tag">Ray Serve</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">GPU</span>
+          <span class="tag">PyTorch</span>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); max-width: 700px; font-size: 1.05rem; line-height: 1.8;">
+        A comprehensive architecture guide for production LLM serving. From GPU scheduling and model parallelism to observability and autoscaling &mdash; everything you need to deploy open-source LLMs at scale on Kubernetes.
+      </p>
     </div>
   </section>
 
-  <!-- Deck 1: vLLM + KubeRay -->
+  <!-- Key Metrics -->
+  <section style="padding: 0 0 4rem;">
+    <div class="container">
+      <div class="metric-row">
+        <div class="metric-card">
+          <div class="value">2.2K</div>
+          <div class="label">Tokens/s per H200</div>
+        </div>
+        <div class="metric-card">
+          <div class="value">24x</div>
+          <div class="label">Throughput vs naive</div>
+        </div>
+        <div class="metric-card">
+          <div class="value">&lt;100ms</div>
+          <div class="label">Time to first token</div>
+        </div>
+        <div class="metric-card">
+          <div class="value">95%+</div>
+          <div class="label">GPU Utilization</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide Previews (Teaser) -->
+  <section style="padding: 0 0 2rem;">
+    <div class="container">
+      <span class="section-label">What's Inside</span>
+      <h2 style="margin-bottom: 2rem;">Slide Preview</h2>
+
+      <div class="locked-preview">
+        <div class="blur-overlay">
+          <div class="grid-3" style="margin-bottom: 1.5rem;">
+            <div class="slide-preview">
+              <span class="slide-num">Slides 1&ndash;3</span>
+              <h4>Architecture Stack</h4>
+              <p>The 4-layer architecture: vLLM inference engine, Ray Serve orchestration, KubeRay operator, and Kubernetes foundation. How they fit together for production LLM serving.</p>
+              <div class="stack-mini">
+                <div class="layer" style="background: #FF6B35;">vLLM</div>
+                <div class="layer" style="background: #00A3FF;">Ray Serve</div>
+                <div class="layer" style="background: #7C5CFC;">KubeRay</div>
+                <div class="layer" style="background: #334155;">Kubernetes</div>
+              </div>
+            </div>
+            <div class="slide-preview">
+              <span class="slide-num">Slides 4&ndash;6</span>
+              <h4>vLLM Deep Dive</h4>
+              <p>PagedAttention, continuous batching, tensor parallelism. Broad model support (Llama 3.1, DeepSeek, Qwen, Pixtral VLM). PyTorch as hardware abstraction across NVIDIA, AMD, Intel, and TPU.</p>
+            </div>
+            <div class="slide-preview">
+              <span class="slide-num">Slides 7&ndash;9</span>
+              <h4>Ray Serve + KubeRay + K8s</h4>
+              <p>Request routing with prefix-cache affinity, GPU-aware autoscaling, KubeRay CRDs (RayCluster, RayService, RayJob), and the Kubernetes GPU scheduling foundation.</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="slide-preview">
+              <span class="slide-num">Slide 10</span>
+              <h4>Request Flow</h4>
+              <p>End-to-end data flow from OpenAI-compatible client through K8s ingress, Ray Serve router, and vLLM engine. Prefill vs decode phase optimization.</p>
+            </div>
+            <div class="slide-preview">
+              <span class="slide-num">Slides 11&ndash;12</span>
+              <h4>Benchmarks + Deployment</h4>
+              <p>Production performance numbers, comparison table (vLLM vs TGI vs TRT-LLM), and a complete RayService YAML manifest for Llama 3.1 on GKE.</p>
+            </div>
+            <div class="slide-preview">
+              <span class="slide-num">Slides 13&ndash;17</span>
+              <h4>Scaling + Observability + Future</h4>
+              <p>Single-node TP vs multi-node PP patterns, unified Prometheus metrics stack, disaggregated serving, and the future of LLM infrastructure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Gate -->
+  <section style="padding: 2rem 0 4rem;" id="gate-container">
+    <div class="container">
+      <div class="gate-section" id="gate-form-section">
+        <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128274;</div>
+        <h2>Get the Full Deck</h2>
+        <p>Enter your work email to unlock the interactive presentation and downloadable PPTX.</p>
+        <div class="gate-error" id="gate-error"></div>
+        <form class="gate-form" id="deck-gate-form">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Deck Download: vLLM + KubeRay">
+          <input type="hidden" name="from_name" value="AutoscaleWorks Deck Gate">
+          <div class="form-row">
+            <div>
+              <label for="gate-email">Work Email *</label>
+              <input type="email" id="gate-email" name="email" placeholder="you@company.com" required>
+            </div>
+            <div>
+              <label for="gate-company">Company</label>
+              <input type="text" id="gate-company" name="company" placeholder="Your company (optional)">
+            </div>
+          </div>
+          <button type="submit" class="submit-btn" id="gate-submit">
+            Unlock Deck &#8594;
+          </button>
+          <p class="gate-privacy">No spam. We'll only use this to send you the deck and relevant updates.</p>
+        </form>
+      </div>
+
+      <!-- Success / Download -->
+      <div class="download-section" id="download-section">
+        <div class="success-icon">&#9989;</div>
+        <h2>You're In</h2>
+        <p>Thanks! Access the full presentation below.</p>
+        <div class="download-buttons">
+          <a href="decks/vllm-kuberay-llm-serving.html" class="btn btn-primary">View Interactive Deck &#8594;</a>
+          <a href="downloads/vLLM_KubeRay_LLM_Serving.pptx" class="btn btn-outline" download>Download PPTX &#8595;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics Covered -->
   <section>
     <div class="container">
-      <div class="cta-section" style="text-align: left; padding: 3rem;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
-          <div>
-            <span class="section-label">Featured Deck</span>
-            <h2>Efficient LLM Deployment: vLLM + Ray Serve + KubeRay + Kubernetes</h2>
-          </div>
-          <div class="card-tags">
-            <span class="tag">vLLM</span>
-            <span class="tag">KubeRay</span>
-            <span class="tag">Ray Serve</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">GPU</span>
-          </div>
+      <div class="section-header">
+        <span class="section-label">Full Topic List</span>
+        <h2>What You'll Learn</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>vLLM Inference Engine</h3>
+          <p>PagedAttention for near-zero KV cache waste, continuous batching for max GPU utilization, tensor and pipeline parallelism for multi-GPU/multi-node serving. Plus the simple Python API and OpenAI compatibility.</p>
         </div>
-
-        <div class="grid-2" style="gap: 3rem;">
-          <div>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A comprehensive technical deep dive into the end-to-end architecture for production LLM serving. Covers the full stack from vLLM inference engine through Ray Serve orchestration, KubeRay Kubernetes operator, and GPU-accelerated Kubernetes clusters.</p>
-
-            <h3 style="margin-bottom: 1rem;">Topics Covered</h3>
-            <ul class="values-list">
-              <li><span class="check">&#10003;</span> vLLM PagedAttention, continuous batching, and tensor parallelism</li>
-              <li><span class="check">&#10003;</span> Broad model support: Llama 3.1, DeepSeek, Qwen, Pixtral VLM</li>
-              <li><span class="check">&#10003;</span> PyTorch as hardware abstraction across NVIDIA, AMD, Intel, and TPU</li>
-              <li><span class="check">&#10003;</span> Ray Serve request routing, load balancing, and autoscaling</li>
-              <li><span class="check">&#10003;</span> KubeRay CRDs: RayCluster, RayService, RayJob</li>
-              <li><span class="check">&#10003;</span> Production deployment manifests and scaling patterns</li>
-              <li><span class="check">&#10003;</span> Observability stack: vLLM + Ray + Kubernetes metrics</li>
-              <li><span class="check">&#10003;</span> Performance benchmarks: 2.2K tokens/s per H200</li>
-            </ul>
-          </div>
-          <div>
-            <div class="card" style="padding: 2rem; text-align: center; margin-bottom: 1.5rem;">
-              <div style="font-size: 4rem; margin-bottom: 1rem;">&#127916;</div>
-              <p style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text);">17 Slides</p>
-              <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Interactive Reveal.js Presentation</p>
-              <a href="decks/vllm-kuberay-llm-serving.html" class="btn btn-primary" style="display: inline-block;">View Presentation &#8594;</a>
-            </div>
-
-            <div class="card" style="padding: 1.5rem;">
-              <h4 style="margin-bottom: 0.75rem; font-weight: 700;">Navigation</h4>
-              <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; line-height: 2;">
-                <li><span style="color: var(--accent);">&#8594; / &#8592;</span> &nbsp; Arrow keys to navigate slides</li>
-                <li><span style="color: var(--accent);">Esc</span> &nbsp; Overview / grid view</li>
-                <li><span style="color: var(--accent);">F</span> &nbsp; Fullscreen mode</li>
-                <li><span style="color: var(--accent);">S</span> &nbsp; Speaker notes</li>
-              </ul>
-            </div>
-          </div>
+        <div class="card">
+          <h3>Model Ecosystem</h3>
+          <p>Support for Llama 3.1 (8B&ndash;405B), DeepSeek R1/V3 with MoE, Qwen, Mistral, Gemma, Phi, and vision-language models like Pixtral 12B and Qwen2-VL. PyTorch-based hardware abstraction across NVIDIA, AMD, Intel, and Google TPU.</p>
         </div>
-
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">Based on CNCF presentation by Lily (Xiaoxuan) Liu &mdash; &ldquo;Efficient LLM Deployment: A Unified Approach with Ray, vLLM, and Kubernetes&rdquo;</p>
+        <div class="card">
+          <h3>Ray Serve Orchestration</h3>
+          <p>Autoscaling based on queue depth, prefix-cache-affinity routing, zero-downtime rolling updates, disaggregated prefill/decode, and wide expert parallelism for MoE models.</p>
+        </div>
+        <div class="card">
+          <h3>KubeRay Operator</h3>
+          <p>Kubernetes-native CRDs (RayCluster, RayService, RayJob), declarative cluster provisioning, auto-healing, GPU-aware scheduling, and native integration with K8s secrets, ConfigMaps, and PVCs.</p>
+        </div>
+        <div class="card">
+          <h3>Production Deployment</h3>
+          <p>Complete RayService YAML manifest, single-node tensor parallelism vs multi-node pipeline parallelism, data parallel replicas, and scaling from 1 GPU to 32+ GPUs across nodes.</p>
+        </div>
+        <div class="card">
+          <h3>Observability &amp; Benchmarks</h3>
+          <p>Unified Prometheus metrics from vLLM, Ray, and Kubernetes. TTFT, TPOT, KV cache utilization, and GPU metrics in Grafana. Performance comparison vs TGI and TRT-LLM.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -103,8 +511,8 @@
   <section>
     <div class="container">
       <div class="cta-section">
-        <h2>Want Us to Present to Your Team?</h2>
-        <p>We deliver custom technical deep dives on AI infrastructure, LLM serving architecture, and Kubernetes-native ML ops.</p>
+        <h2>Want a Custom Deep Dive for Your Team?</h2>
+        <p>We deliver tailored technical presentations on AI infrastructure, LLM serving architecture, and Kubernetes-native ML ops.</p>
         <a href="contact.html" class="btn btn-primary">Get in Touch &#8594;</a>
       </div>
     </div>
@@ -125,6 +533,81 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('deck-gate-form');
+      const gateSection = document.getElementById('gate-form-section');
+      const downloadSection = document.getElementById('download-section');
+      const submitBtn = document.getElementById('gate-submit');
+      const errorBox = document.getElementById('gate-error');
+      const STORAGE_KEY = 'aw_deck_unlocked';
+
+      // Check if already unlocked
+      if (localStorage.getItem(STORAGE_KEY) === 'true') {
+        gateSection.style.display = 'none';
+        downloadSection.classList.add('visible');
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        errorBox.style.display = 'none';
+
+        const email = document.getElementById('gate-email').value.trim();
+        const company = document.getElementById('gate-company').value.trim();
+
+        // Basic work email validation (block free providers)
+        const freeProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com',
+                               'aol.com', 'icloud.com', 'mail.com', 'protonmail.com',
+                               'zoho.com', 'yandex.com', 'gmx.com', 'live.com'];
+        const domain = email.split('@')[1];
+        if (freeProviders.includes(domain)) {
+          errorBox.textContent = 'Please use a work email address. Free email providers are not accepted.';
+          errorBox.style.display = 'block';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          // Submit to Web3Forms
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_key: form.querySelector('[name="access_key"]').value,
+              subject: 'Deck Download: vLLM + KubeRay LLM Serving',
+              from_name: 'AutoscaleWorks Deck Gate',
+              email: email,
+              company: company || '(not provided)',
+              deck: 'vLLM + KubeRay + Ray Serve + Kubernetes',
+              message: `New deck download request from ${email}` + (company ? ` at ${company}` : '')
+            })
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            // Unlock
+            localStorage.setItem(STORAGE_KEY, 'true');
+            gateSection.style.display = 'none';
+            downloadSection.classList.add('visible');
+            downloadSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error(result.message || 'Submission failed');
+          }
+        } catch (err) {
+          // If Web3Forms key not configured yet, still unlock (graceful degradation)
+          console.warn('Form submission error:', err);
+          localStorage.setItem(STORAGE_KEY, 'true');
+          gateSection.style.display = 'none';
+          downloadSection.classList.add('visible');
+          downloadSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
