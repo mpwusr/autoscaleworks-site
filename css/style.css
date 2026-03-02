@@ -717,13 +717,12 @@ section {
 /* ── Stack Landing Page ──────────────────────────────────────────── */
 
 .stack-hero {
-  min-height: 70vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 6rem;
-  padding-bottom: 2rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
 }
 
 .stack-hero-content {
@@ -769,7 +768,7 @@ section {
 /* ── Stack Visualization ─────────────────────────────────────────── */
 
 .stack-visual-section {
-  padding: 6rem 0;
+  padding: 3rem 0 6rem;
 }
 
 .stack-layout {
