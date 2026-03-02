@@ -717,12 +717,13 @@ section {
 /* ── Stack Landing Page ──────────────────────────────────────────── */
 
 .stack-hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 
 .stack-hero-content {
@@ -750,6 +751,7 @@ section {
 
 .stack-quote-hero {
   font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0;
 }
 
 .stack-quote-accent {
@@ -781,44 +783,48 @@ section {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 0;
 }
 
 .stack-layer {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem 1.5rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: 10px;
+  padding: 1.1rem 1.4rem;
   transition: all 0.3s;
 }
 
 .stack-layer:hover {
-  border-color: var(--border-light);
-  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  background: rgba(30, 41, 59, 0.9);
+  transform: translateX(4px);
 }
 
 .stack-layer-num {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  width: 28px;
-  height: 28px;
+  font-weight: 700;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-glow);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  border-radius: 6px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
 .stack-layer-info h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.15rem;
+  color: var(--text);
 }
 
 .stack-layer-info p {
@@ -829,43 +835,46 @@ section {
 
 .stack-connector {
   width: 2px;
-  height: 16px;
-  background: var(--border-light);
+  height: 20px;
+  background: linear-gradient(180deg, var(--accent), rgba(59, 130, 246, 0.2));
   margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .stack-gap {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   margin: 0.25rem 0;
 }
 
 .stack-gap-line {
   flex: 1;
-  height: 2px;
+  height: 3px;
   background: repeating-linear-gradient(
     90deg,
     var(--warning) 0,
-    var(--warning) 8px,
-    transparent 8px,
-    transparent 16px
+    var(--warning) 10px,
+    transparent 10px,
+    transparent 18px
   );
+  opacity: 0.8;
 }
 
 .stack-gap-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--warning);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   white-space: nowrap;
-  padding: 0.3rem 0.8rem;
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
 }
 
 .stack-narrative {
@@ -945,26 +954,28 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.5rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: 0;
   margin-bottom: -1px;
 }
 
 .stack-fit-row:first-child {
-  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .stack-fit-row:last-child {
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  border-radius: 0 0 10px 10px;
 }
 
 .stack-fit-us {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.08));
-  border-color: rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.12));
+  border-color: rgba(59, 130, 246, 0.5);
+  border-width: 2px;
   position: relative;
   z-index: 1;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
 }
 
 .stack-fit-label {
