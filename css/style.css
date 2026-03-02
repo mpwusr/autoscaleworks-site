@@ -714,6 +714,296 @@ section {
   position: relative;
 }
 
+/* ── Stack Landing Page ──────────────────────────────────────────── */
+
+.stack-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+
+.stack-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stack-hero-content .hero-badge {
+  margin: 0 auto 2rem;
+}
+
+.stack-quote {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.stack-quote-hero {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.stack-quote-accent {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stack-quote-final {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--text);
+}
+
+/* ── Stack Visualization ─────────────────────────────────────────── */
+
+.stack-visual-section {
+  padding: 6rem 0;
+}
+
+.stack-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stack-tower {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.stack-layer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s;
+}
+
+.stack-layer:hover {
+  border-color: var(--border-light);
+  background: var(--bg-card-hover);
+}
+
+.stack-layer-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.stack-layer-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.stack-layer-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.stack-connector {
+  width: 2px;
+  height: 16px;
+  background: var(--border-light);
+  margin: 0 auto;
+}
+
+.stack-gap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0.25rem 0;
+}
+
+.stack-gap-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--warning) 0,
+    var(--warning) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.stack-gap-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--warning);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.3rem 0.8rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 4px;
+}
+
+.stack-narrative {
+  max-width: 480px;
+}
+
+.stack-narrative p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.stack-narrative p:last-child {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* ── Problem Section ─────────────────────────────────────────────── */
+
+.stack-problem-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.stack-problem-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stack-problem-details {
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+.stack-problem-details p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Solution Section ────────────────────────────────────────────── */
+
+.stack-solution-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.stack-solution-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stack-solution-details {
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+.stack-solution-details p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Where AutoScale Fits ────────────────────────────────────────── */
+
+.stack-fit {
+  margin-top: 3rem;
+}
+
+.stack-fit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: -1px;
+}
+
+.stack-fit-row:first-child {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.stack-fit-row:last-child {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.stack-fit-us {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.08));
+  border-color: rgba(59, 130, 246, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.stack-fit-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stack-fit-tech {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.stack-fit-us .stack-fit-label,
+.stack-fit-us .stack-fit-tech {
+  color: var(--text);
+}
+
+.stack-fit-us .stack-fit-tech {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ── Stack CTA ───────────────────────────────────────────────────── */
+
+.stack-cta {
+  padding: 5rem 4rem;
+}
+
+.stack-cta .stack-quote {
+  margin-bottom: 0;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────── */
 
 @media (max-width: 968px) {
@@ -730,6 +1020,13 @@ section {
   }
   .hero-stats {
     gap: 2rem;
+  }
+  .stack-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .stack-narrative {
+    max-width: 100%;
   }
 }
 
@@ -769,5 +1066,8 @@ section {
   }
   section {
     padding: 4rem 0;
+  }
+  .stack-cta {
+    padding: 3rem 1.5rem;
   }
 }

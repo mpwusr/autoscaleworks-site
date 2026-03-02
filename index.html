@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoscaleWorks — AI Infrastructure &amp; Intelligent Security</title>
-  <meta name="description" content="Production-grade AI infrastructure, LLM serving, and intelligent security systems. From GPU clusters to agentic RAG pipelines.">
+  <title>AutoscaleWorks — The Missing Layer in the AI Infrastructure Stack</title>
+  <meta name="description" content="The AI infrastructure stack has five layers and a critical gap between orchestration and distributed compute. AutoScale.AI bridges that gap with GPU-aware workload management.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -32,156 +32,153 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="stack-hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="container">
-      <div class="hero-content">
+      <div class="stack-hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Now deploying on GKE &amp; OpenShift AI
+          The AI Infrastructure Gap
         </div>
-        <h1>
-          AI Infrastructure<br>
-          Built for <span class="gradient-text">Production</span>
-        </h1>
-        <p class="hero-subtitle">
-          We design, build, and operate self-hosted LLM serving platforms, intelligent surveillance systems, and agentic RAG pipelines on Kubernetes. From GPU clusters to real-time inference.
-        </p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Start a Project &#8594;</a>
-          <a href="services.html" class="btn btn-outline">View Services</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="number">vLLM</span>
-            <span class="label">Self-hosted LLM Serving</span>
-          </div>
-          <div class="hero-stat">
-            <span class="number">GKE</span>
-            <span class="label">GPU Kubernetes Clusters</span>
-          </div>
-          <div class="hero-stat">
-            <span class="number">RAG</span>
-            <span class="label">Agentic Retrieval Systems</span>
-          </div>
-        </div>
+        <blockquote class="stack-quote stack-quote-hero">
+          The AI infrastructure stack has five layers &mdash; and there&rsquo;s a critical gap between two of them.
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- Trust -->
-  <section class="trust-section">
+  <!-- Stack Visualization -->
+  <section class="stack-visual-section">
     <div class="container">
-      <div class="trust-logos">
-        <span class="trust-logo">Kubernetes</span>
-        <span class="trust-logo">Google Cloud</span>
-        <span class="trust-logo">NVIDIA</span>
-        <span class="trust-logo">Red Hat OpenShift</span>
-        <span class="trust-logo">Terraform</span>
-        <span class="trust-logo">PyTorch</span>
+      <div class="stack-layout">
+
+        <!-- Left: The Stack Diagram -->
+        <div class="stack-tower">
+          <div class="stack-layer stack-layer-5">
+            <span class="stack-layer-num">5</span>
+            <div class="stack-layer-info">
+              <h3>AI Workloads</h3>
+              <p>Agentic AI, Post-Training, Fine-Tuning</p>
+            </div>
+          </div>
+          <div class="stack-connector"></div>
+          <div class="stack-layer stack-layer-4">
+            <span class="stack-layer-num">4</span>
+            <div class="stack-layer-info">
+              <h3>ML Frameworks</h3>
+              <p>PyTorch, vLLM, Inference Engines</p>
+            </div>
+          </div>
+          <div class="stack-connector"></div>
+          <div class="stack-layer stack-layer-3">
+            <span class="stack-layer-num">3</span>
+            <div class="stack-layer-info">
+              <h3>Distributed Compute</h3>
+              <p>Ray, Distributed Training &amp; Serving</p>
+            </div>
+          </div>
+          <div class="stack-gap">
+            <div class="stack-gap-line"></div>
+            <span class="stack-gap-label">THE GAP</span>
+            <div class="stack-gap-line"></div>
+          </div>
+          <div class="stack-layer stack-layer-2">
+            <span class="stack-layer-num">2</span>
+            <div class="stack-layer-info">
+              <h3>Orchestration</h3>
+              <p>Kubernetes, Container Scheduling</p>
+            </div>
+          </div>
+          <div class="stack-connector"></div>
+          <div class="stack-layer stack-layer-1">
+            <span class="stack-layer-num">1</span>
+            <div class="stack-layer-info">
+              <h3>Infrastructure</h3>
+              <p>Bare-Metal GPU Clusters</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Narrative -->
+        <div class="stack-narrative">
+          <p>
+            Workloads like agentic AI and post-training are exploding. They run on PyTorch and inference engines like vLLM. Those frameworks rely on distributed compute &mdash; increasingly Ray &mdash; which sits on top of Kubernetes and bare-metal GPU clusters.
+          </p>
+          <p>
+            The stack is clear. The gap is not.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Services Overview -->
+  <!-- The Problem -->
+  <section class="stack-problem-section">
+    <div class="container">
+      <div class="stack-problem-content">
+        <blockquote class="stack-quote">
+          But here&rsquo;s the problem: Kubernetes doesn&rsquo;t natively understand GPUs the way AI workloads need it to.
+        </blockquote>
+        <div class="stack-problem-details">
+          <p>
+            K8s can schedule containers. It can&rsquo;t intelligently manage multi-tenant GPU allocation, handle fractional GPU sharing, or optimize cluster utilization across training and inference jobs competing for the same hardware.
+          </p>
+          <p>
+            Kueue and Volcano are early attempts, but they&rsquo;re not production-complete for complex AI workloads.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="stack-solution-section">
+    <div class="container">
+      <div class="stack-solution-content">
+        <blockquote class="stack-quote stack-quote-accent">
+          That&rsquo;s the missing layer &mdash; and that&rsquo;s where AutoScale.AI operates.
+        </blockquote>
+        <div class="stack-solution-details">
+          <p>
+            We sit between the orchestration and distributed compute tiers. Our PySpark-based control plane manages GPU cluster lifecycle &mdash; scheduling, allocation, and optimization &mdash; so platform teams don&rsquo;t have to build custom operators from scratch.
+          </p>
+          <p>
+            We bridge Spark&rsquo;s data pipeline strengths with Kubernetes-native orchestration for GPU-aware workload management.
+          </p>
+        </div>
+
+        <!-- Where AutoScale.AI fits -->
+        <div class="stack-fit">
+          <div class="stack-fit-row">
+            <span class="stack-fit-label">Distributed Compute</span>
+            <span class="stack-fit-tech">Ray</span>
+          </div>
+          <div class="stack-fit-row stack-fit-us">
+            <span class="stack-fit-label">GPU Control Plane</span>
+            <span class="stack-fit-tech">AutoScale.AI</span>
+          </div>
+          <div class="stack-fit-row">
+            <span class="stack-fit-label">Orchestration</span>
+            <span class="stack-fit-tech">Kubernetes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
   <section>
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">What We Do</span>
-        <h2>Full-Stack AI Engineering</h2>
-        <p>From infrastructure provisioning to model deployment to intelligent applications. We handle the entire stack.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card service-card">
-          <div class="card-icon">&#9881;</div>
-          <h3>LLM Serving Infrastructure</h3>
-          <p>Production vLLM deployments on GKE and OpenShift with GPU autoscaling, model caching, and OpenAI-compatible APIs.</p>
-          <div class="card-tags">
-            <span class="tag">vLLM</span>
-            <span class="tag">GKE</span>
-            <span class="tag">L4/H100</span>
-            <span class="tag">Terraform</span>
-          </div>
+      <div class="cta-section stack-cta">
+        <blockquote class="stack-quote stack-quote-final">
+          GPU availability is the bottleneck. We make sure every GPU-hour counts.
+        </blockquote>
+        <div class="hero-actions" style="justify-content: center; margin-top: 2.5rem;">
+          <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
         </div>
-        <div class="card service-card">
-          <div class="card-icon">&#128270;</div>
-          <h3>Agentic RAG Systems</h3>
-          <p>Retrieval-augmented generation with tool-calling agents, vector databases, persistent memory, and real-time data pipelines.</p>
-          <div class="card-tags">
-            <span class="tag">LangChain</span>
-            <span class="tag">PGVector</span>
-            <span class="tag">CLIP</span>
-            <span class="tag">FastAPI</span>
-          </div>
-        </div>
-        <div class="card service-card">
-          <div class="card-icon">&#128373;</div>
-          <h3>AI-Powered Security</h3>
-          <p>Computer vision surveillance with real-time object detection, threat classification, and natural language querying over security footage.</p>
-          <div class="card-tags">
-            <span class="tag">YOLO</span>
-            <span class="tag">Mask R-CNN</span>
-            <span class="tag">BLIP</span>
-            <span class="tag">CLIP</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How We Work -->
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Our Approach</span>
-        <h2>Infrastructure as Code. AI as a Service.</h2>
-        <p>Every deployment is reproducible, version-controlled, and built for scale from day one.</p>
-      </div>
-      <div class="grid-4">
-        <div class="card" style="text-align: center;">
-          <div class="card-icon" style="margin: 0 auto 1rem;">&#9783;</div>
-          <h3>Assess</h3>
-          <p>Evaluate your workloads, GPU requirements, and model selection to design the right architecture.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-          <div class="card-icon" style="margin: 0 auto 1rem;">&#128736;</div>
-          <h3>Build</h3>
-          <p>Terraform, Kubernetes manifests, Helm charts, Dockerfiles. Production-ready from the first commit.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-          <div class="card-icon" style="margin: 0 auto 1rem;">&#9889;</div>
-          <h3>Deploy</h3>
-          <p>GPU node pools, model serving, vector databases, and application containers. All orchestrated on K8s.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-          <div class="card-icon" style="margin: 0 auto 1rem;">&#128200;</div>
-          <h3>Operate</h3>
-          <p>Monitoring, autoscaling, cost optimization. Your AI infrastructure runs reliably at any scale.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Case Study -->
-  <section>
-    <div class="container">
-      <div class="cta-section">
-        <span class="section-label">Featured Project</span>
-        <h2>Surveillance RAG on vLLM + GKE</h2>
-        <p>Full-stack migration of a physical security surveillance system to self-hosted Llama 3.1 on Kubernetes with PGVector, GPU inference, and an agentic RAG pipeline.</p>
-        <a href="case-studies.html" class="btn btn-primary">Read the Case Study &#8594;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section>
-    <div class="container">
-      <div class="cta-section">
-        <h2>Ready to Scale Your AI?</h2>
-        <p>From proof-of-concept to production GPU clusters. Let's build your AI infrastructure together.</p>
-        <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
       </div>
     </div>
   </section>
