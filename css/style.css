@@ -158,6 +158,12 @@ section {
   font-size: 1rem;
 }
 
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
