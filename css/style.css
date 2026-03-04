@@ -125,7 +125,7 @@ section {
   background: rgba(2, 6, 23, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
   transition: all 0.3s;
 }
 
@@ -160,7 +160,7 @@ section {
 }
 
 .nav-logo-img {
-  height: 95px;
+  height: 88px;
   width: auto;
   border-radius: 8px;
   object-fit: contain;
@@ -735,7 +735,7 @@ section {
 .stack-page {
   position: relative;
   overflow: hidden;
-  padding-top: 7.5rem;
+  padding-top: 7rem;
   min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
