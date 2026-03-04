@@ -127,6 +127,7 @@ section {
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;
   transition: all 0.3s;
+  overflow: visible;
 }
 
 .nav-inner {
@@ -143,8 +144,10 @@ section {
   font-weight: 800;
   color: var(--text);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
+  position: relative;
+  z-index: 1001;
 }
 
 .nav-logo .logo-icon {
@@ -159,10 +162,19 @@ section {
 }
 
 .nav-logo-img {
-  height: 70px;
+  height: 140px;
   width: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: contain;
+  position: relative;
+  top: -8px;
+  filter: drop-shadow(0 4px 24px rgba(59, 130, 246, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 32px rgba(59, 130, 246, 0.45));
 }
 
 .nav-links {
@@ -1027,6 +1039,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  .nav-logo-img {
+    height: 90px;
+    top: -4px;
+  }
   .nav-links {
     display: none;
   }
