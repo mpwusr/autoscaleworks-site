@@ -708,7 +708,7 @@ section {
 /* ── Page Header ──────────────────────────────────────────────────── */
 
 .page-header {
-  padding: 10rem 0 4rem;
+  padding: 13rem 0 4rem;
   text-align: center;
   position: relative;
 }
@@ -738,7 +738,7 @@ section {
 .stack-page {
   position: relative;
   overflow: hidden;
-  padding-top: 4.5rem;
+  padding-top: 10rem;
   min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
