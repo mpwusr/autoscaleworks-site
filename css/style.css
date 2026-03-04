@@ -125,7 +125,7 @@ section {
   background: rgba(2, 6, 23, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 0.75rem 0;
+  padding: 0.4rem 0;
   transition: all 0.3s;
 }
 
@@ -160,9 +160,9 @@ section {
 }
 
 .nav-logo-img {
-  height: 120px;
+  height: 95px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 4px 24px rgba(59, 130, 246, 0.3));
@@ -705,7 +705,7 @@ section {
 /* ── Page Header ──────────────────────────────────────────────────── */
 
 .page-header {
-  padding: 12rem 0 4rem;
+  padding: 10rem 0 4rem;
   text-align: center;
   position: relative;
 }
@@ -735,7 +735,7 @@ section {
 .stack-page {
   position: relative;
   overflow: hidden;
-  padding-top: 9.5rem;
+  padding-top: 7.5rem;
   min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
