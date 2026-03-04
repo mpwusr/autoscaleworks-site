@@ -122,12 +122,11 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(2, 6, 23, 0.85);
+  background: rgba(2, 6, 23, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   transition: all 0.3s;
-  overflow: visible;
 }
 
 .nav-inner {
@@ -144,10 +143,9 @@ section {
   font-weight: 800;
   color: var(--text);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
-  position: relative;
-  z-index: 1001;
+  flex-shrink: 0;
 }
 
 .nav-logo .logo-icon {
@@ -162,12 +160,11 @@ section {
 }
 
 .nav-logo-img {
-  height: 140px;
+  height: 120px;
   width: auto;
   border-radius: 10px;
   object-fit: contain;
-  position: relative;
-  top: -8px;
+  display: block;
   filter: drop-shadow(0 4px 24px rgba(59, 130, 246, 0.3));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -708,7 +705,7 @@ section {
 /* ── Page Header ──────────────────────────────────────────────────── */
 
 .page-header {
-  padding: 13rem 0 4rem;
+  padding: 12rem 0 4rem;
   text-align: center;
   position: relative;
 }
@@ -738,7 +735,7 @@ section {
 .stack-page {
   position: relative;
   overflow: hidden;
-  padding-top: 10rem;
+  padding-top: 9.5rem;
   min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
@@ -1040,8 +1037,7 @@ section {
 
 @media (max-width: 768px) {
   .nav-logo-img {
-    height: 90px;
-    top: -4px;
+    height: 80px;
   }
   .nav-links {
     display: none;
