@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.pdf
+slide-*.jpg
+
+# Claude Code
+.claude/
+
+# Internal control plane (do NOT commit to public repo)
+console.html
+js/console.js
+js/console.css
+
+# OS files
+.DS_Store
