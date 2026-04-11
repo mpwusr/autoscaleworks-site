@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <title>TALON-EDGE — Patented Drone Swarm Coordination Technology</title>
+  <meta name="description" content="TALON-EDGE: Patented compute-aware routing, kernel-level monitoring, and military-grade security for autonomous multi-vendor drone swarms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?t=1772656196">
+  <style>
+    /* Patent badge */
+    .te-patent-badge { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent); border-radius: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-top: 1rem; }
+
+    /* Stats */
+    .te-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin: 2rem 0; }
+    .te-stat { text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; }
+    .te-stat-value { font-size: 2.5rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; display: block; }
+    .te-stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; display: block; }
+    .te-stat-desc { font-size: 0.75rem; color: rgba(148,163,184,0.6); margin-top: 0.25rem; display: block; }
+
+    /* IP table */
+    .te-ip-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .te-ip-table th, .te-ip-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .te-ip-table th { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+    .te-ip-table td { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Coverage domain badges */
+    .te-domains { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; justify-content: center; }
+    .te-domain-badge { padding: 0.5rem 1rem; border: 1px solid rgba(59,130,246,0.3); border-radius: 2rem; font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Next steps */
+    .te-steps { display: flex; gap: 1.5rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap; }
+    .te-step { display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+    .te-step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent); font-weight: 700; }
+    .te-step-arrow { color: var(--text-muted); }
+
+    /* Hardware vendor accent colors */
+    .te-vendor-nvidia { border-top: 3px solid #76B900; }
+    .te-vendor-amd { border-top: 3px solid #ED1C24; }
+    .te-vendor-intel { border-top: 3px solid #0071C5; }
+    .te-vendor-hailo { border-top: 3px solid #00C4B3; }
+    .te-vendor-coral { border-top: 3px solid #4285F4; }
+
+    /* Hardware grid - 5 columns */
+    .te-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+
+    /* NATO subsection */
+    .te-nato-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 1rem; }
+    .te-nato-list li { padding: 0.5rem 0.75rem; font-size: 0.9rem; color: var(--text-muted); }
+    .te-nato-list li::before { content: "\2713  "; color: var(--accent); font-weight: 700; }
+
+    /* MOSA badge */
+    .te-mosa-badge { display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid rgba(59,130,246,0.3); border-radius: 0.25rem; font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; text-align: center; }
+
+    /* Callout box */
+    .te-callout { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-radius: 0.5rem; padding: 1.25rem 1.5rem; text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Specs callout */
+    .te-specs-callout { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap; }
+    .te-specs-callout span { padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 0.25rem; }
+
+    /* NDA note */
+    .te-nda-note { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem; font-style: italic; }
+
+    /* Section divider */
+    .te-section { padding: 4rem 0; }
+    .te-section:nth-child(even) { background: rgba(255,255,255,0.01); }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .te-grid-5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .te-stats { grid-template-columns: repeat(2, 1fr); }
+      .te-nato-list { grid-template-columns: 1fr; }
+      .te-grid-5 { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-nav.png?t=1772656196" alt="AutoScaleWorks.ai" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="talonedge.html" class="active">TALON-EDGE</a></li>
+        <li><a href="decks.html">Decks</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Section 1: Hero -->
+  <section class="page-header">
+    <div class="container">
+      <h1>TALON-EDGE&#8482;</h1>
+      <p class="hero-subtitle">Patented Drone Swarm Coordination Technology</p>
+      <p style="max-width: 700px; margin: 1rem auto 0; color: var(--text-muted); font-size: 1.05rem;">
+        Compute-aware routing, kernel-level monitoring, and military-grade security for autonomous multi-vendor drone swarms.
+      </p>
+      <div class="te-patent-badge">Patent Pending &middot; USPTO 2026 &middot; 20 Claims Filed</div>
+    </div>
+  </section>
+
+  <!-- Section 2: The Problem -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Challenge</span>
+        <h2>The Problem with Current Drone Swarms</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">&#128274;</div>
+          <h3>Vendor Lock-In</h3>
+          <p>Proprietary protocols prevent cross-platform interoperability. Violates DoD MOSA mandates.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128268;</div>
+          <h3>No Compute Routing</h3>
+          <p>Mesh protocols route packets, not compute. GPU-equipped drones treated same as lightweight scouts.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128263;</div>
+          <h3>No Self-Description</h3>
+          <p>Drones cannot programmatically advertise capabilities. No standardized query interface exists.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9888;</div>
+          <h3>Single-Vendor GPUs</h3>
+          <p>No orchestration across NVIDIA, AMD, Intel, Hailo, Coral hardware within a single swarm.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128683;</div>
+          <h3>Brittle Topology</h3>
+          <p>Drone loss requires manual reconfiguration. No automatic reconvergence mechanism.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128275;</div>
+          <h3>Inadequate Security</h3>
+          <p>Most mesh protocols lack FIPS 140-3 compliance and post-quantum readiness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: What TALON-EDGE Delivers -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Solution</span>
+        <h2>What TALON-EDGE&#8482; Delivers</h2>
+        <p>Patented capabilities &mdash; not available in any existing system</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">&#128268;</div>
+          <h3>Compute-Aware Swarm Routing</h3>
+          <p>Workloads are automatically routed to the drone with the best available compute resources. Not just packet routing &mdash; intelligence routing.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9881;</div>
+          <h3>Vendor-Neutral Drone Interface</h3>
+          <p>Every drone in the swarm exposes the same standardized interface regardless of hardware manufacturer or GPU vendor.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128200;</div>
+          <h3>Real-Time Health Monitoring</h3>
+          <p>Kernel-level monitoring of GPU, radio, power, and sensors with sub-millisecond event detection and automatic response.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128272;</div>
+          <h3>Military-Grade Encryption</h3>
+          <p>FIPS 140-3 validated cryptography with post-quantum readiness for classified operations.</p>
+        </div>
+      </div>
+      <p class="te-nda-note">Full technical architecture and implementation details available under NDA</p>
+    </div>
+  </section>
+
+  <!-- Section 4: Performance Benchmarks -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Performance</span>
+        <h2>Performance Benchmarks</h2>
+      </div>
+      <div class="te-stats">
+        <div class="te-stat">
+          <span class="te-stat-value">&lt;500ms</span>
+          <span class="te-stat-label">Swarm Reconvergence</span>
+          <span class="te-stat-desc">Automatic workload redistribution on drone loss</span>
+        </div>
+        <div class="te-stat">
+          <span class="te-stat-value">50ms</span>
+          <span class="te-stat-label">Peer Detection</span>
+          <span class="te-stat-desc">Detects drone loss faster than any competing system</span>
+        </div>
+        <div class="te-stat">
+          <span class="te-stat-value">5</span>
+          <span class="te-stat-label">GPU Vendors Supported</span>
+          <span class="te-stat-desc">True multi-vendor heterogeneous swarm support</span>
+        </div>
+        <div class="te-stat">
+          <span class="te-stat-value">20</span>
+          <span class="te-stat-label">Patent Claims Filed</span>
+          <span class="te-stat-desc">5 independent + 15 dependent claims</span>
+        </div>
+      </div>
+      <div class="te-callout">
+        No prior art combines compute-aware routing, kernel-level monitoring, standardized drone interfaces, and military-grade security into a single swarm coordination system.
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Operational Capabilities -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Capabilities</span>
+        <h2>Operational Capabilities</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">&#9889;</div>
+          <h3>Automatic Reconvergence</h3>
+          <p>When a drone is lost, the swarm automatically redistributes workloads and sensor coverage. No manual reconfiguration. No central controller dependency. Recovery in under 500ms.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9881;</div>
+          <h3>Cross-Vendor GPU Orchestration</h3>
+          <p>Route inference workloads to the best available GPU regardless of vendor. NVIDIA, AMD, Intel, Hailo, and Coral coordinated within a single swarm through a unified abstraction.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128225;</div>
+          <h3>Multi-Modal Sensor Fusion</h3>
+          <p>Fuse EO/IR, LIDAR, thermal, SAR, and SIGINT data across drones from different manufacturers. Standardized sensor schema with GPU-accelerated registration.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128267;</div>
+          <h3>Intelligent Power Management</h3>
+          <p>Kernel-level battery monitoring triggers graceful workload migration before a drone departs for charging. Swarm maintains coverage throughout the charge rotation cycle.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9992;</div>
+          <h3>Graceful Swarm Departure</h3>
+          <p>Drones signal planned departure, migrate active workloads to peers, and only withdraw after confirming all missions are handed off. Zero disruption to swarm operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Supported Hardware -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Hardware</span>
+        <h2>Runs on Your Hardware Today</h2>
+        <p>Minimal footprint designed for edge compute platforms</p>
+      </div>
+      <div class="te-specs-callout">
+        <span>&lt; 200 MB flash</span>
+        <span>256 MB RAM minimum</span>
+        <span>BSP integration delivery</span>
+      </div>
+      <div class="te-grid-5">
+        <div class="card te-vendor-nvidia">
+          <h3>NVIDIA Jetson</h3>
+          <p>Orin NX / AGX Orin</p>
+          <div class="card-tags">
+            <span class="tag">JetPack (Ubuntu)</span>
+            <span class="tag">8&ndash;64GB RAM</span>
+          </div>
+        </div>
+        <div class="card te-vendor-hailo">
+          <h3>Hailo-8 NPU</h3>
+          <p>AI Accelerator Module</p>
+          <div class="card-tags">
+            <span class="tag">Yocto / RPi OS</span>
+            <span class="tag">4&ndash;8GB RAM</span>
+          </div>
+        </div>
+        <div class="card te-vendor-coral">
+          <h3>Google Coral</h3>
+          <p>Edge TPU</p>
+          <div class="card-tags">
+            <span class="tag">Mendel Linux</span>
+            <span class="tag">1&ndash;4GB RAM</span>
+          </div>
+        </div>
+        <div class="card te-vendor-amd">
+          <h3>AMD Radeon</h3>
+          <p>Embedded Series</p>
+          <div class="card-tags">
+            <span class="tag">Yocto / Ubuntu</span>
+            <span class="tag">8&ndash;32GB RAM</span>
+          </div>
+        </div>
+        <div class="card te-vendor-intel">
+          <h3>Intel Arc</h3>
+          <p>Embedded Series</p>
+          <div class="card-tags">
+            <span class="tag">Yocto / Ubuntu</span>
+            <span class="tag">8&ndash;32GB RAM</span>
+          </div>
+        </div>
+      </div>
+      <p class="te-nda-note">Full technical architecture available under NDA</p>
+    </div>
+  </section>
+
+  <!-- Section 7: Defense & Compliance -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Compliance</span>
+        <h2>Defense &amp; Compliance Ready</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">&#128272;</div>
+          <h3>FIPS 140-3 Encryption</h3>
+          <p>Validated cryptographic modules for all inter-drone communication.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128737;</div>
+          <h3>Post-Quantum Ready</h3>
+          <p>Hybrid key exchange for quantum-resistant classified operations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128196;</div>
+          <h3>DISA STIG Aligned</h3>
+          <p>Designed for OS, network, and application security STIG compliance.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#127988;</div>
+          <h3>Classification Enforcement</h3>
+          <p>Routing automatically enforces data handling rules per classification level.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 1rem;">NATO Interoperability</h3>
+        <ul class="te-nato-list">
+          <li>STANAG 4586 compatible interface</li>
+          <li>Coalition peering with information boundaries</li>
+          <li>Classification-aware cross-domain routing</li>
+          <li>Allied force network partitioning</li>
+        </ul>
+        <div style="text-align: center;">
+          <div class="te-mosa-badge">DoD MOSA compliant (10 U.S.C. &sect; 4401)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: IP Portfolio -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Intellectual Property</span>
+        <h2>Intellectual Property Portfolio</h2>
+      </div>
+      <table class="te-ip-table">
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Domain</th>
+            <th>Claims</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TALON-EDGE&#8482; NPA</strong></td>
+            <td>Drone swarm coordination, compute routing, vendor-neutral interfaces, kernel monitoring</td>
+            <td>20</td>
+            <td>Filed</td>
+          </tr>
+          <tr>
+            <td><strong>AutoScaleWorks&#8482; NPA</strong></td>
+            <td>Heterogeneous GPU orchestration, kernel-level monitoring, vendor-neutral compute management</td>
+            <td>15</td>
+            <td>Filed</td>
+          </tr>
+          <tr>
+            <td><strong>Provisional Application</strong></td>
+            <td>Full technical specification of drone mesh coordination system</td>
+            <td>&mdash;</td>
+            <td>Filed</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 style="text-align: center; margin-top: 2rem; margin-bottom: 0.5rem;">Technology Coverage Domains</h3>
+      <div class="te-domains">
+        <span class="te-domain-badge">Compute-Aware Swarm Routing</span>
+        <span class="te-domain-badge">Vendor-Neutral Drone Interfaces</span>
+        <span class="te-domain-badge">Kernel-Level Health Monitoring</span>
+        <span class="te-domain-badge">Military-Grade Encryption</span>
+        <span class="te-domain-badge">NATO Interop</span>
+        <span class="te-domain-badge">Sub-Second Reconvergence</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Licensing Models -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Licensing</span>
+        <h2>Licensing Opportunity</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128736;</div>
+          <h3>Technology License</h3>
+          <p>Integrate patented capabilities into your drone platform with full technical support and implementation guidance.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#128220;</div>
+          <h3>Patent License</h3>
+          <p>Freedom-to-operate license covering the full patent portfolio for your product line.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 1rem;">&#129309;</div>
+          <h3>Joint Development</h3>
+          <p>Collaborative partnership to customize the technology for your specific platform and mission requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: CTA / Next Steps -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <span class="section-label">Get Started</span>
+        <h2>Proposed Next Steps</h2>
+        <div class="te-steps">
+          <div class="te-step">
+            <span class="te-step-num">1.</span> Mutual NDA execution
+          </div>
+          <span class="te-step-arrow">&#8594;</span>
+          <div class="te-step">
+            <span class="te-step-num">2.</span> Technical deep-dive under NDA
+          </div>
+          <span class="te-step-arrow">&#8594;</span>
+          <div class="te-step">
+            <span class="te-step-num">3.</span> License terms
+          </div>
+          <span class="te-step-arrow">&#8594;</span>
+          <div class="te-step">
+            <span class="te-step-num">4.</span> Proof-of-concept
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">Patent Pending &nbsp;|&nbsp; &copy; 2026 AutoScaleWorks.ai Corp.</span>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="talonedge.html">TALON-EDGE</a></li>
+          <li><a href="decks.html">Decks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
