@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <title>Services — AutoscaleWorks</title>
-  <meta name="description" content="AutoScale GPU-as-a-Service, Storage-as-a-Service, Tokenization-as-a-Service, plus engineering services for LLM serving, RAG pipelines, and GPU Kubernetes clusters.">
+  <meta name="description" content="AutoScale GPU-as-a-Service, GPU Memory-as-a-Service, Storage-as-a-Service, Tokenization-as-a-Service, plus engineering services for LLM serving, RAG pipelines, and GPU Kubernetes clusters.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -27,6 +27,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html" class="active">Services</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="talonedge.html">TALON-EDGE</a></li>
         <li><a href="decks.html">Decks</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
@@ -48,7 +49,7 @@
       <div class="section-header">
         <span class="section-label">Offerings</span>
         <h2>AutoScale&trade; Product Suite</h2>
-        <p>Patent-pending infrastructure software that turns GPUs, storage, and tokenization into dynamically managed utilities.</p>
+        <p>Patent-pending infrastructure software that turns GPUs, GPU memory, storage, and inference throughput into dynamically managed, kernel-enforced utilities.</p>
       </div>
     </div>
   </section>
@@ -83,24 +84,53 @@
     </div>
   </section>
 
-  <!-- Offering 2: Storage-as-a-Service -->
+  <!-- Offering 2: GPU Memory-as-a-Service -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">&#129504;</div>
+        <div class="about-content">
+          <span class="section-label">02</span>
+          <h2>AutoScale&trade; GPU Memory-as-a-Service</h2>
+          <p>Fine-grained VRAM management for multi-tenant AI infrastructure. Rather than statically partitioning GPU memory across workloads, our control plane enforces per-tenant VRAM budgets at the kernel level &mdash; tracking actual memory pressure in real time and reclaiming idle allocations automatically. KV cache reservation for LLM inference servers is managed as a first-class resource, preventing out-of-memory evictions and enabling predictable latency under concurrent load.</p>
+          <div class="card-tags" style="margin-top: 1.5rem;">
+            <span class="tag">VRAM Enforcement</span>
+            <span class="tag">KV Cache Management</span>
+            <span class="tag">Multi-Tenant</span>
+            <span class="tag">eBPF</span>
+            <span class="tag">Kernel-Level</span>
+          </div>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Per-tenant VRAM budget enforcement with real-time tracking</li>
+            <li><span class="check">&#10003;</span> KV cache reservation for concurrent LLM inference workloads</li>
+            <li><span class="check">&#10003;</span> Automatic reclamation of idle GPU memory allocations</li>
+            <li><span class="check">&#10003;</span> Predictable inference latency under multi-model concurrency</li>
+            <li><span class="check">&#10003;</span> Zero modification to model code, runtimes, or drivers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offering 3: Storage-as-a-Service -->
   <section>
     <div class="container">
       <div class="about-grid">
         <div class="about-image">&#128451;</div>
         <div class="about-content">
-          <span class="section-label">02</span>
+          <span class="section-label">03</span>
           <h2>AutoScale&trade; Storage-as-a-Service</h2>
-          <p>Intelligent, workload-aware storage orchestration that dynamically provisions, tiers, and migrates storage volumes based on real-time I/O patterns, latency requirements, and cost constraints. Eliminate storage overprovisioning and reduce data gravity bottlenecks across hybrid and multi-cloud AI infrastructure.</p>
+          <p>Intelligent, workload-aware storage orchestration that dynamically provisions, tiers, and migrates storage volumes based on real-time I/O patterns, latency requirements, and cost constraints. Our kernel-level I/O telemetry tracks read and write throughput per workload, enabling automated tiering decisions and eliminating storage overprovisioning across hybrid and multi-cloud AI infrastructure.</p>
           <div class="card-tags" style="margin-top: 1.5rem;">
             <span class="tag">Kubernetes-Native</span>
             <span class="tag">Multi-Cloud</span>
-            <span class="tag">Workload-Aware</span>
+            <span class="tag">Workload-Aware I/O</span>
             <span class="tag">Dynamic Tiering</span>
+            <span class="tag">eBPF</span>
           </div>
           <ul class="values-list">
             <li><span class="check">&#10003;</span> Workload-aware volume provisioning and tiering</li>
-            <li><span class="check">&#10003;</span> Real-time I/O telemetry and latency optimization</li>
+            <li><span class="check">&#10003;</span> Real-time I/O telemetry: per-workload read/write bandwidth tracking</li>
             <li><span class="check">&#10003;</span> Automated data migration across storage classes</li>
             <li><span class="check">&#10003;</span> Cost-optimized placement for training datasets and checkpoints</li>
           </ul>
@@ -109,25 +139,26 @@
     </div>
   </section>
 
-  <!-- Offering 3: Tokenization-as-a-Service -->
+  <!-- Offering 4: Tokenization-as-a-Service -->
   <section>
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <span class="section-label">03</span>
+          <span class="section-label">04</span>
           <h2>AutoScale&trade; Tokenization-as-a-Service</h2>
-          <p>Scalable tokenization infrastructure for AI pipelines that offloads, caches, and optimizes tokenization workloads at scale. Reduce pre-processing bottlenecks, improve throughput for large-scale training and inference, and centralize tokenization management across heterogeneous model deployments.</p>
+          <p>Kernel-enforced token rate limiting for LLM inference infrastructure. Our control plane enforces per-tenant token budgets directly in the kernel &mdash; applying rate caps at the system call boundary so that no single inference workload can exhaust shared GPU capacity. Token consumption is tracked in real time across concurrent model servers, with configurable per-request and per-second limits that apply without touching model code or inference runtimes.</p>
           <div class="card-tags" style="margin-top: 1.5rem;">
-            <span class="tag">GPU-Accelerated</span>
-            <span class="tag">Pipeline Integration</span>
+            <span class="tag">Token Rate Limiting</span>
+            <span class="tag">Per-Tenant Budgets</span>
+            <span class="tag">Kernel-Enforced</span>
+            <span class="tag">LLM Inference</span>
             <span class="tag">Multi-Model</span>
-            <span class="tag">Caching</span>
           </div>
           <ul class="values-list">
-            <li><span class="check">&#10003;</span> Centralized tokenization service for multi-model environments</li>
-            <li><span class="check">&#10003;</span> Intelligent token caching to eliminate redundant computation</li>
-            <li><span class="check">&#10003;</span> GPU-accelerated batch tokenization for training pipelines</li>
-            <li><span class="check">&#10003;</span> Drop-in API compatibility with HuggingFace tokenizers</li>
+            <li><span class="check">&#10003;</span> Per-tenant token rate caps enforced at the kernel level</li>
+            <li><span class="check">&#10003;</span> Real-time token consumption tracking across concurrent model servers</li>
+            <li><span class="check">&#10003;</span> Configurable per-request and per-second token limits</li>
+            <li><span class="check">&#10003;</span> Zero modification to model code, inference runtimes, or APIs</li>
           </ul>
         </div>
         <div class="about-image">&#128273;</div>
@@ -152,7 +183,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <span class="section-label">04</span>
+          <span class="section-label">05</span>
           <h2>Self-Hosted LLM Serving</h2>
           <p>Deploy and operate large language models on your own infrastructure. We build production vLLM clusters on GKE and OpenShift with GPU autoscaling, model weight caching, and OpenAI-compatible API endpoints.</p>
           <p>Keep your data private, control your costs, and eliminate vendor lock-in. Our deployments serve Llama, Mistral, Qwen, and other open-weight models with enterprise-grade reliability.</p>
@@ -183,7 +214,7 @@
       <div class="about-grid">
         <div class="about-image">&#128270;</div>
         <div class="about-content">
-          <span class="section-label">05</span>
+          <span class="section-label">06</span>
           <h2>Agentic RAG Systems</h2>
           <p>Build intelligent retrieval-augmented generation pipelines that go beyond simple search. Our agentic RAG systems use tool-calling agents, persistent memory, and multi-step reasoning to answer complex queries over your data.</p>
           <p>From vector database selection and embedding strategy to agent loop design and tool integration, we architect the full pipeline.</p>
@@ -211,7 +242,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <span class="section-label">06</span>
+          <span class="section-label">07</span>
           <h2>AI-Powered Security &amp; Surveillance</h2>
           <p>Intelligent surveillance systems that combine computer vision, natural language processing, and real-time alerting. Query your security footage in plain English and get instant, context-aware answers.</p>
           <p>Our CV pipelines process camera feeds through multi-model detection (YOLO, Mask R-CNN), generate embeddings (CLIP) and captions (BLIP), and store everything in a searchable vector database.</p>
@@ -241,7 +272,7 @@
       <div class="about-grid">
         <div class="about-image">&#9729;</div>
         <div class="about-content">
-          <span class="section-label">07</span>
+          <span class="section-label">08</span>
           <h2>Kubernetes &amp; Cloud Infrastructure</h2>
           <p>Production Kubernetes clusters designed for AI workloads. We handle the entire infrastructure lifecycle: VPC networking, GPU node pools, IAM, storage, CI/CD, and monitoring.</p>
           <p>Everything is codified in Terraform and Helm, version-controlled in Git, and deployed through automated pipelines. No manual kubectl required.</p>
@@ -307,11 +338,12 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-text">&copy; 2025 AutoscaleWorks</span>
+        <span class="footer-text">&copy; 2026 AutoscaleWorks</span>
         <ul class="footer-links">
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="talonedge.html">TALON-EDGE</a></li>
           <li><a href="decks.html">Decks</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
