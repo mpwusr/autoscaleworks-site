@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <title>Decks — AutoscaleWorks</title>
-  <meta name="description" content="Technical presentations on AI infrastructure, LLM serving with vLLM, KubeRay, Kubernetes, and production GPU workloads.">
+  <meta name="description" content="TALON-EDGE Pre-NDA technology overview: patented drone swarm coordination with compute-aware routing, multi-vendor GPU support, and military-grade security.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -329,27 +329,27 @@
   <!-- Deck Hero -->
   <section class="deck-hero">
     <div class="container">
-      <span class="section-label">Technical Deep Dive</span>
+      <span class="section-label">Technology Overview</span>
       <div class="deck-title-row">
         <div>
-          <h1 style="font-size: clamp(1.8rem, 4vw, 2.6rem);">Efficient LLM Deployment:<br>vLLM + Ray Serve + KubeRay + Kubernetes</h1>
+          <h1 style="font-size: clamp(1.8rem, 4vw, 2.6rem);">TALON-EDGE&#8482;<br>Patented Drone Swarm Coordination Technology</h1>
           <div class="deck-meta">
-            <div class="deck-meta-item"><span class="icon">&#128196;</span> 17 Slides</div>
-            <div class="deck-meta-item"><span class="icon">&#9201;</span> ~25 min read</div>
-            <div class="deck-meta-item"><span class="icon">&#127891;</span> Advanced</div>
+            <div class="deck-meta-item"><span class="icon">&#128196;</span> 10 Slides</div>
+            <div class="deck-meta-item"><span class="icon">&#9201;</span> ~15 min read</div>
+            <div class="deck-meta-item"><span class="icon">&#127891;</span> Executive / Technical</div>
           </div>
         </div>
         <div class="card-tags" style="margin-top: 0;">
-          <span class="tag">vLLM</span>
-          <span class="tag">KubeRay</span>
-          <span class="tag">Ray Serve</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">GPU</span>
-          <span class="tag">PyTorch</span>
+          <span class="tag">Drone Swarms</span>
+          <span class="tag">Multi-GPU</span>
+          <span class="tag">eBPF</span>
+          <span class="tag">BGP</span>
+          <span class="tag">FIPS 140-3</span>
+          <span class="tag">Patent Pending</span>
         </div>
       </div>
       <p style="color: var(--text-muted); max-width: 700px; font-size: 1.05rem; line-height: 1.8;">
-        A comprehensive architecture guide for production LLM serving. From GPU scheduling and model parallelism to observability and autoscaling &mdash; everything you need to deploy open-source LLMs at scale on Kubernetes.
+        Compute-aware routing, kernel-level monitoring, and military-grade security for autonomous multi-vendor drone swarms. The first system that treats GPU/NPU compute as a routable resource across five hardware vendors.
       </p>
     </div>
   </section>
@@ -359,20 +359,20 @@
     <div class="container">
       <div class="metric-row">
         <div class="metric-card">
-          <div class="value">2.2K</div>
-          <div class="label">Tokens/s per H200</div>
+          <div class="value">&lt;500ms</div>
+          <div class="label">Swarm Reconvergence</div>
         </div>
         <div class="metric-card">
-          <div class="value">24x</div>
-          <div class="label">Throughput vs naive</div>
+          <div class="value">50ms</div>
+          <div class="label">Peer Detection</div>
         </div>
         <div class="metric-card">
-          <div class="value">&lt;100ms</div>
-          <div class="label">Time to first token</div>
+          <div class="value">5</div>
+          <div class="label">GPU Vendors Supported</div>
         </div>
         <div class="metric-card">
-          <div class="value">95%+</div>
-          <div class="label">GPU Utilization</div>
+          <div class="value">20</div>
+          <div class="label">Patent Claims Filed</div>
         </div>
       </div>
     </div>
@@ -388,43 +388,43 @@
         <div class="blur-overlay">
           <div class="grid-3" style="margin-bottom: 1.5rem;">
             <div class="slide-preview">
-              <span class="slide-num">Slides 1&ndash;3</span>
-              <h4>Architecture Stack</h4>
-              <p>The 4-layer architecture: vLLM inference engine, Ray Serve orchestration, KubeRay operator, and Kubernetes foundation. How they fit together for production LLM serving.</p>
+              <span class="slide-num">Slides 1&ndash;2</span>
+              <h4>The Problem</h4>
+              <p>Six critical gaps in current drone swarms: vendor lock-in, no compute routing, no self-description, single-vendor GPUs, brittle topology, and inadequate security.</p>
+            </div>
+            <div class="slide-preview">
+              <span class="slide-num">Slides 3&ndash;4</span>
+              <h4>What TALON-EDGE Delivers</h4>
+              <p>Four patented capabilities: compute-aware swarm routing, vendor-neutral drone interface, real-time health monitoring, and military-grade encryption. Performance benchmarks.</p>
               <div class="stack-mini">
-                <div class="layer" style="background: #FF6B35;">vLLM</div>
-                <div class="layer" style="background: #00A3FF;">Ray Serve</div>
-                <div class="layer" style="background: #7C5CFC;">KubeRay</div>
-                <div class="layer" style="background: #334155;">Kubernetes</div>
+                <div class="layer" style="background: #3b82f6;">Compute-Aware Routing</div>
+                <div class="layer" style="background: #6366f1;">Vendor-Neutral Interface</div>
+                <div class="layer" style="background: #8b5cf6;">Health Monitoring</div>
+                <div class="layer" style="background: #334155;">Military-Grade Security</div>
               </div>
             </div>
             <div class="slide-preview">
-              <span class="slide-num">Slides 4&ndash;6</span>
-              <h4>vLLM Deep Dive</h4>
-              <p>PagedAttention, continuous batching, tensor parallelism. Broad model support (Llama 3.1, DeepSeek, Qwen, Pixtral VLM). PyTorch as hardware abstraction across NVIDIA, AMD, Intel, and TPU.</p>
-            </div>
-            <div class="slide-preview">
-              <span class="slide-num">Slides 7&ndash;9</span>
-              <h4>Ray Serve + KubeRay + K8s</h4>
-              <p>Request routing with prefix-cache affinity, GPU-aware autoscaling, KubeRay CRDs (RayCluster, RayService, RayJob), and the Kubernetes GPU scheduling foundation.</p>
+              <span class="slide-num">Slide 5</span>
+              <h4>Hardware Platforms</h4>
+              <p>Runs on NVIDIA Jetson, Hailo-8 NPU, Google Coral, AMD Embedded Radeon, and Intel Arc. Under 200MB flash, 256MB RAM minimum. BSP integration delivery.</p>
             </div>
           </div>
 
           <div class="grid-3">
             <div class="slide-preview">
-              <span class="slide-num">Slide 10</span>
-              <h4>Request Flow</h4>
-              <p>End-to-end data flow from OpenAI-compatible client through K8s ingress, Ray Serve router, and vLLM engine. Prefill vs decode phase optimization.</p>
+              <span class="slide-num">Slide 6</span>
+              <h4>Defense &amp; Compliance</h4>
+              <p>FIPS 140-3 encryption, post-quantum readiness, DISA STIG alignment, classification enforcement, and NATO interoperability including STANAG 4586.</p>
             </div>
             <div class="slide-preview">
-              <span class="slide-num">Slides 11&ndash;12</span>
-              <h4>Benchmarks + Deployment</h4>
-              <p>Production performance numbers, comparison table (vLLM vs TGI vs TRT-LLM), and a complete RayService YAML manifest for Llama 3.1 on GKE.</p>
+              <span class="slide-num">Slide 7</span>
+              <h4>Operational Capabilities</h4>
+              <p>Automatic reconvergence, cross-vendor GPU orchestration, multi-modal sensor fusion, intelligent power management, and graceful swarm departure.</p>
             </div>
             <div class="slide-preview">
-              <span class="slide-num">Slides 13&ndash;17</span>
-              <h4>Scaling + Observability + Future</h4>
-              <p>Single-node TP vs multi-node PP patterns, unified Prometheus metrics stack, disaggregated serving, and the future of LLM infrastructure.</p>
+              <span class="slide-num">Slides 8&ndash;10</span>
+              <h4>IP Portfolio &amp; Licensing</h4>
+              <p>Three patent assets (35 total claims), six technology coverage domains, and three licensing models: technology license, patent license, and joint development.</p>
             </div>
           </div>
         </div>
@@ -438,11 +438,11 @@
       <div class="gate-section" id="gate-form-section">
         <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128274;</div>
         <h2>Get the Full Deck</h2>
-        <p>Enter your work email to unlock the interactive presentation and downloadable PPTX.</p>
+        <p>Enter your work email to download the TALON-EDGE&#8482; Pre-NDA technology overview.</p>
         <div class="gate-error" id="gate-error"></div>
         <form class="gate-form" id="deck-gate-form">
           <input type="hidden" name="access_key" value="ccbf86dc-ed81-4bca-a3a1-aad308ffbaed">
-          <input type="hidden" name="subject" value="Deck Download: vLLM + KubeRay">
+          <input type="hidden" name="subject" value="Deck Download: TALON-EDGE Pre-NDA">
           <input type="hidden" name="from_name" value="AutoscaleWorks Deck Gate">
           <div class="form-row">
             <div>
@@ -455,7 +455,7 @@
             </div>
           </div>
           <button type="submit" class="submit-btn" id="gate-submit">
-            Unlock Deck &#8594;
+            Download Deck &#8594;
           </button>
           <p class="gate-privacy">No spam. We'll only use this to send you the deck and relevant updates.</p>
         </form>
@@ -465,10 +465,10 @@
       <div class="download-section" id="download-section">
         <div class="success-icon">&#9989;</div>
         <h2>You're In</h2>
-        <p>Thanks! Access the full presentation below.</p>
+        <p>Thanks! Download the TALON-EDGE&#8482; Pre-NDA overview below.</p>
         <div class="download-buttons">
-          <a href="decks/vllm-kuberay-llm-serving.html" class="btn btn-primary">View Interactive Deck &#8594;</a>
-          <a href="downloads/vLLM_KubeRay_LLM_Serving.pptx" class="btn btn-outline" download>Download PPTX &#8595;</a>
+          <a href="downloads/TALON_EDGE_Pre_NDA.pptx" class="btn btn-primary" download>Download PPTX &#8595;</a>
+          <a href="talonedge.html" class="btn btn-outline">View Product Page &#8594;</a>
         </div>
       </div>
     </div>
@@ -478,33 +478,33 @@
   <section>
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Full Topic List</span>
+        <span class="section-label">Deck Coverage</span>
         <h2>What You'll Learn</h2>
       </div>
       <div class="grid-2">
         <div class="card">
-          <h3>vLLM Inference Engine</h3>
-          <p>PagedAttention for near-zero KV cache waste, continuous batching for max GPU utilization, tensor and pipeline parallelism for multi-GPU/multi-node serving. Plus the simple Python API and OpenAI compatibility.</p>
+          <h3>Compute-Aware Swarm Routing</h3>
+          <p>How TALON-EDGE transforms drone swarms from packet-routing meshes into compute-routing fabrics. Workloads automatically routed to the drone with the best available GPU/NPU resources.</p>
         </div>
         <div class="card">
-          <h3>Model Ecosystem</h3>
-          <p>Support for Llama 3.1 (8B&ndash;405B), DeepSeek R1/V3 with MoE, Qwen, Mistral, Gemma, Phi, and vision-language models like Pixtral 12B and Qwen2-VL. PyTorch-based hardware abstraction across NVIDIA, AMD, Intel, and Google TPU.</p>
+          <h3>Multi-Vendor GPU Support</h3>
+          <p>Five hardware vendors supported in a single swarm: NVIDIA Jetson, AMD Embedded Radeon, Intel Arc, Hailo-8 NPU, and Google Coral Edge TPU. Vendor-neutral standardized interface.</p>
         </div>
         <div class="card">
-          <h3>Ray Serve Orchestration</h3>
-          <p>Autoscaling based on queue depth, prefix-cache-affinity routing, zero-downtime rolling updates, disaggregated prefill/decode, and wide expert parallelism for MoE models.</p>
+          <h3>Kernel-Level Health Monitoring</h3>
+          <p>Real-time monitoring of GPU, radio, power, and sensors with sub-millisecond event detection. Automatic swarm reconvergence in under 500ms on drone loss.</p>
         </div>
         <div class="card">
-          <h3>KubeRay Operator</h3>
-          <p>Kubernetes-native CRDs (RayCluster, RayService, RayJob), declarative cluster provisioning, auto-healing, GPU-aware scheduling, and native integration with K8s secrets, ConfigMaps, and PVCs.</p>
+          <h3>Defense &amp; NATO Compliance</h3>
+          <p>FIPS 140-3 validated encryption, post-quantum readiness, DISA STIG alignment, classification enforcement, and NATO STANAG 4586 interoperability. DoD MOSA compliant.</p>
         </div>
         <div class="card">
-          <h3>Production Deployment</h3>
-          <p>Complete RayService YAML manifest, single-node tensor parallelism vs multi-node pipeline parallelism, data parallel replicas, and scaling from 1 GPU to 32+ GPUs across nodes.</p>
+          <h3>Operational Capabilities</h3>
+          <p>Automatic reconvergence, cross-vendor GPU orchestration, multi-modal sensor fusion (EO/IR, LIDAR, thermal, SAR, SIGINT), intelligent power management, and graceful swarm departure.</p>
         </div>
         <div class="card">
-          <h3>Observability &amp; Benchmarks</h3>
-          <p>Unified Prometheus metrics from vLLM, Ray, and Kubernetes. TTFT, TPOT, KV cache utilization, and GPU metrics in Grafana. Performance comparison vs TGI and TRT-LLM.</p>
+          <h3>IP Portfolio &amp; Licensing</h3>
+          <p>Three patent assets with 35 total claims covering compute-aware routing, vendor-neutral interfaces, kernel monitoring, and military-grade security. Technology, patent, and joint development licensing available.</p>
         </div>
       </div>
     </div>
@@ -514,9 +514,9 @@
   <section>
     <div class="container">
       <div class="cta-section">
-        <h2>Want a Custom Deep Dive for Your Team?</h2>
-        <p>We deliver tailored technical presentations on AI infrastructure, LLM serving architecture, and Kubernetes-native ML ops.</p>
-        <a href="contact.html" class="btn btn-primary">Get in Touch &#8594;</a>
+        <h2>Interested in Licensing TALON-EDGE&#8482;?</h2>
+        <p>Technology license, patent license, or joint development partnership. Full technical architecture available under NDA.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
       </div>
     </div>
   </section>
@@ -581,12 +581,12 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               access_key: form.querySelector('[name="access_key"]').value,
-              subject: 'Deck Download: vLLM + KubeRay LLM Serving',
+              subject: 'Deck Download: TALON-EDGE Pre-NDA',
               from_name: 'AutoscaleWorks Deck Gate',
               email: email,
               company: company || '(not provided)',
-              deck: 'vLLM + KubeRay + Ray Serve + Kubernetes',
-              message: `New deck download request from ${email}` + (company ? ` at ${company}` : '')
+              deck: 'TALON-EDGE Pre-NDA Technology Overview',
+              message: `New TALON-EDGE deck download request from ${email}` + (company ? ` at ${company}` : '')
             })
           });
 
