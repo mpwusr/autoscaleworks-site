@@ -67,6 +67,24 @@
     /* NDA note */
     .te-nda-note { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem; font-style: italic; }
 
+    /* Competitive landscape table */
+    .te-landscape-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    .te-landscape-table th { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 0.75rem; text-align: left; border-bottom: 2px solid rgba(59,130,246,0.3); }
+    .te-landscape-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text-muted); }
+    .te-landscape-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .te-landscape-table .te-yes { color: #4ade80; }
+    .te-landscape-table .te-no { color: #f87171; }
+    .te-landscape-table .te-partial { color: #fbbf24; }
+    .te-landscape-table .te-highlight td { color: var(--text); font-weight: 600; background: rgba(59,130,246,0.06); }
+
+    /* Insight box */
+    .te-insight { background: rgba(59,130,246,0.06); border-left: 3px solid var(--accent); border-radius: 0 0.5rem 0.5rem 0; padding: 1.5rem 2rem; margin-top: 2rem; }
+    .te-insight h4 { color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.75rem; font-family: 'JetBrains Mono', monospace; }
+    .te-insight p { color: var(--text-muted); margin: 0.5rem 0 0; line-height: 1.6; }
+
+    /* First badge */
+    .te-first-badge { display: inline-block; padding: 0.35rem 0.75rem; background: rgba(59,130,246,0.15); border-radius: 0.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+
     /* Section divider */
     .te-section { padding: 4rem 0; }
     .te-section:nth-child(even) { background: rgba(255,255,255,0.01); }
@@ -191,7 +209,80 @@
     </div>
   </section>
 
-  <!-- Section 4: Performance Benchmarks -->
+  <!-- Section 4: Competitive Landscape -->
+  <section class="te-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Market Position</span>
+        <h2>The First Compute-Aware Drone Swarm</h2>
+        <p>No existing system treats GPU/NPU compute as a routable resource across multiple vendors</p>
+      </div>
+      <table class="te-landscape-table">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>GPU/NPU</th>
+            <th>Multi-Vendor</th>
+            <th>Compute Routing</th>
+            <th>Gap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shield AI (Hivemind)</td>
+            <td class="te-partial">NVIDIA only</td>
+            <td class="te-no">No</td>
+            <td class="te-no">No</td>
+            <td>Single vendor, proprietary autonomy stack</td>
+          </tr>
+          <tr>
+            <td>Skydio (X10)</td>
+            <td class="te-partial">NVIDIA only</td>
+            <td class="te-no">No</td>
+            <td class="te-no">No</td>
+            <td>Visual nav only, not swarm GPU orchestration</td>
+          </tr>
+          <tr>
+            <td>Anduril (Lattice)</td>
+            <td class="te-partial">Various</td>
+            <td class="te-no">No</td>
+            <td class="te-no">No</td>
+            <td>C2 platform &mdash; routes missions, not compute</td>
+          </tr>
+          <tr>
+            <td>MAVLink / MAVSDK</td>
+            <td class="te-no">None</td>
+            <td>N/A</td>
+            <td class="te-no">No</td>
+            <td>Communication protocol, not compute protocol</td>
+          </tr>
+          <tr>
+            <td>ROS2 Multi-Robot</td>
+            <td class="te-no">None</td>
+            <td>N/A</td>
+            <td class="te-no">No</td>
+            <td>Pub/sub middleware, no GPU telemetry routing</td>
+          </tr>
+          <tr class="te-highlight">
+            <td>TALON-EDGE&#8482;</td>
+            <td class="te-yes">5 vendors</td>
+            <td class="te-yes">Yes</td>
+            <td class="te-yes">Yes</td>
+            <td><span class="te-first-badge">First in category</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="te-insight">
+        <h4>The Paradigm Shift</h4>
+        <p>Every existing drone swarm platform treats drones as either <strong>packet endpoints</strong> (mesh radios, MAVLink) or <strong>mission executors</strong> (assign task, drone figures it out).</p>
+        <p>TALON-EDGE is the first system that treats drones as <strong>autonomous compute nodes</strong> that advertise GPU capabilities and accept routed workloads. A drone swarm becomes a distributed compute fabric &mdash; not just a communications mesh.</p>
+        <p>Before TALON-EDGE, drone swarms are like the internet before cloud computing &mdash; they can move data around, but they can&rsquo;t intelligently route <em>work</em> to where the compute resources are.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Performance Benchmarks -->
   <section class="te-section">
     <div class="container">
       <div class="section-header">
