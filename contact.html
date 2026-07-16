@@ -64,10 +64,10 @@
             <label for="service">What are you interested in?</label>
             <select id="service" name="service">
               <option value="">Select a service...</option>
-              <option value="llm-serving">Self-Hosted LLM Serving</option>
-              <option value="rag">Agentic RAG Systems</option>
-              <option value="security">AI-Powered Security</option>
-              <option value="infrastructure">Kubernetes &amp; Cloud Infrastructure</option>
+              <option value="talon-edge">TALON-EDGE Drone GPU Optimization</option>
+              <option value="cost-analysis">GPU Cost Analysis &amp; Cost Optimization</option>
+              <option value="ai-os">AI OS &amp; Multi-Substrate Orchestration</option>
+              <option value="heterogeneous-gpu">Heterogeneous GPU Orchestration</option>
               <option value="advisory">Architecture Advisory</option>
               <option value="other">Other</option>
             </select>
@@ -120,12 +120,12 @@
           <div style="margin-top: 1rem;">
             <h3 style="margin-bottom: 1rem;">Typical Engagements</h3>
             <div class="card-tags">
-              <span class="tag">vLLM on GKE</span>
-              <span class="tag">GPU Clusters</span>
-              <span class="tag">RAG Pipelines</span>
-              <span class="tag">CV Surveillance</span>
-              <span class="tag">Terraform IaC</span>
-              <span class="tag">Helm Charts</span>
+              <span class="tag">Drone GPU Optimization</span>
+              <span class="tag">Cost Analysis</span>
+              <span class="tag">Cost Optimization</span>
+              <span class="tag">AI OS</span>
+              <span class="tag">Multi-Substrate</span>
+              <span class="tag">Heterogeneous GPU</span>
             </div>
           </div>
         </div>
@@ -142,20 +142,20 @@
       </div>
       <div class="grid-2">
         <div class="card">
-          <h3>What GPU types do you work with?</h3>
-          <p>Primarily NVIDIA L4 and H100 on GKE, but we also deploy on A100, T4, and AMD MI300X depending on workload requirements and cloud availability.</p>
+          <h3>What GPU types do you optimize across?</h3>
+          <p>Any of them. Our AI OS treats compute as a heterogeneous, multi-substrate fabric &mdash; NVIDIA (L4, A100, H100), AMD, edge accelerators, and the sub-$350 GPUs targeted by TALON-EDGE &mdash; and routes work to whatever hardware delivers the best utilization and cost.</p>
         </div>
         <div class="card">
-          <h3>Do you work with cloud providers other than GCP?</h3>
-          <p>Yes. While GKE is our primary platform, we also deploy on AWS (EKS), Azure (AKS), and Red Hat OpenShift AI. Our Terraform modules are cloud-agnostic where possible.</p>
+          <h3>How does TALON-EDGE drone GPU optimization work?</h3>
+          <p>TALON-EDGE turns a drone swarm into a distributed compute fabric. Each drone advertises its compute capability, work is routed to the best available GPU in the mesh, and if a drone is lost the swarm automatically redistributes its load &mdash; no manual reconfiguration.</p>
         </div>
         <div class="card">
-          <h3>What models can you deploy with vLLM?</h3>
-          <p>Any model supported by vLLM: Llama 3.x, Mistral, Mixtral, Qwen, Phi, DeepSeek, and more. We handle quantization, caching, and optimization for your specific use case.</p>
+          <h3>What does GPU cost analysis and optimization cover?</h3>
+          <p>We baseline your current GPU spend and utilization, surface idle and stranded capacity, and continuously optimize placement across substrates. The goal is measured outcomes &mdash; higher utilization and lower effective cost per unit of work.</p>
         </div>
         <div class="card">
-          <h3>What's the typical project timeline?</h3>
-          <p>A standard vLLM + RAG deployment on GKE typically takes 2-4 weeks from kickoff to production. Complex multi-model systems or large migrations may take longer.</p>
+          <h3>What is the AI OS and multi-substrate orchestration?</h3>
+          <p>The AI OS is a substrate-agnostic control plane that schedules AI workloads across heterogeneous GPUs, cloud, on-prem, and edge as a single fabric. It abstracts the hardware so the same workload runs wherever it is most efficient at any moment.</p>
         </div>
       </div>
     </div>
