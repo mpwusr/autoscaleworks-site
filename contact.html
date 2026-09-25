@@ -49,7 +49,7 @@
   <section>
     <div class="container">
       <div class="contact-grid">
-        <form class="contact-form" action="#" method="POST">
+        <form class="contact-form" id="contact-form" action="mailto:mike@autoscaleworks.ai" method="POST" enctype="text/plain">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -182,6 +182,23 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Static site: hand the enquiry to the visitor's mail client, pre-filled.
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var interest = f.service.options[f.service.selectedIndex];
+      var subject = 'Briefing request' + (f.service.value ? ' — ' + interest.text : '') + ' — ' + f.name.value;
+      var body = 'Name: ' + f.name.value + '\n' +
+                 'Email: ' + f.email.value + '\n' +
+                 'Organization: ' + (f.company.value || '-') + '\n' +
+                 'Interest: ' + (f.service.value ? interest.text : '-') + '\n\n' +
+                 f.message.value;
+      window.location.href = 'mailto:mike@autoscaleworks.ai?subject=' + encodeURIComponent(subject) +
+                             '&body=' + encodeURIComponent(body);
+    });
+  </script>
 
 </body>
 </html>
