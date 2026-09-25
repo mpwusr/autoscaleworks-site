@@ -6,12 +6,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <title>AutoscaleWorks — The Missing Layer in the AI Infrastructure Stack</title>
-  <meta name="description" content="The AI infrastructure stack has five layers and a critical gap between orchestration and distributed compute. AutoScale.AI bridges that gap with GPU-aware workload management.">
+  <title>AutoScaleWorks.ai — Two Product Lines, One Substrate</title>
+  <meta name="description" content="Governed AI compute for the enterprise, and resilient autonomy for the tactical edge, built on one engineering substrate.">
+  <meta property="og:title" content="AutoScaleWorks.ai — Two Product Lines, One Substrate">
+  <meta property="og:description" content="Governed AI compute for the enterprise, and resilient autonomy for the tactical edge, built on one engineering substrate.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autoscaleworks.ai/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?t=1772656196">
+  <link rel="stylesheet" href="css/style.css?t=1790000000">
 </head>
 <body>
 
@@ -24,131 +28,151 @@
       <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="command-control.html">AI Command &amp; Control</a></li>
         <li><a href="talonedge.html">TALON-EDGE</a></li>
-        <li><a href="decks.html">Decks</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Single-page narrative -->
-  <div class="stack-page">
+  <!-- Hero -->
+  <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="container">
-
-      <!-- Hero -->
-      <div class="stack-hero-compact">
+      <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          The AI Infrastructure Gap
+          Two product lines &middot; one substrate
         </div>
-        <h1 class="stack-headline">The AI infrastructure stack has five layers &mdash; and there&rsquo;s a critical gap between two of them.</h1>
-      </div>
-
-      <!-- Main two-column: Stack + Narrative -->
-      <div class="stack-main">
-        <!-- Left: Stack Tower -->
-        <div class="stack-tower">
-          <div class="stack-layer">
-            <span class="stack-layer-num">5</span>
-            <div class="stack-layer-info">
-              <h3>AI Workloads</h3>
-              <p>Agentic AI, Post-Training</p>
-            </div>
-          </div>
-          <div class="stack-connector"></div>
-          <div class="stack-layer">
-            <span class="stack-layer-num">4</span>
-            <div class="stack-layer-info">
-              <h3>ML Frameworks</h3>
-              <p>PyTorch, vLLM</p>
-            </div>
-          </div>
-          <div class="stack-connector"></div>
-          <div class="stack-layer">
-            <span class="stack-layer-num">3</span>
-            <div class="stack-layer-info">
-              <h3>Distributed Compute</h3>
-              <p>Ray</p>
-            </div>
-          </div>
-          <div class="stack-gap">
-            <div class="stack-gap-line"></div>
-            <span class="stack-gap-label">THE GAP</span>
-            <div class="stack-gap-line"></div>
-          </div>
-          <div class="stack-layer">
-            <span class="stack-layer-num">2</span>
-            <div class="stack-layer-info">
-              <h3>Orchestration</h3>
-              <p>Kubernetes</p>
-            </div>
-          </div>
-          <div class="stack-connector"></div>
-          <div class="stack-layer">
-            <span class="stack-layer-num">1</span>
-            <div class="stack-layer-info">
-              <h3>Infrastructure</h3>
-              <p>Bare-Metal GPUs</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Narrative flow -->
-        <div class="stack-narrative">
-          <p>Workloads like agentic AI and post-training are exploding. They run on PyTorch and inference engines like vLLM. Those frameworks rely on distributed compute &mdash; increasingly Ray &mdash; which sits on top of Kubernetes and bare-metal GPU clusters.</p>
-
-          <h2 class="stack-subhead">Kubernetes doesn&rsquo;t understand GPUs.</h2>
-          <p>K8s can schedule containers. It can&rsquo;t manage multi-tenant GPU allocation, handle fractional GPU sharing, or optimize utilization across training and inference jobs competing for the same hardware. Kueue and Volcano are early attempts, but not production-complete.</p>
-
-          <h2 class="stack-subhead stack-subhead-accent">That&rsquo;s where AutoScale.AI operates.</h2>
-          <p>We sit between orchestration and distributed compute. Our eBPF-based control plane attaches kernel-level probes to GPU drivers &mdash; giving Kubernetes real-time visibility into VRAM pressure, compute occupancy, and thermal state &mdash; and closes the scheduling loop with dynamic taints and a 500ms reconciliation cycle.</p>
-
-          <!-- Inline stack-fit -->
-          <div class="stack-fit">
-            <div class="stack-fit-row">
-              <span class="stack-fit-label">Distributed Compute</span>
-              <span class="stack-fit-tech">Ray</span>
-            </div>
-            <div class="stack-fit-row stack-fit-us">
-              <span class="stack-fit-label">GPU Control Plane</span>
-              <span class="stack-fit-tech">AutoScale.AI</span>
-            </div>
-            <div class="stack-fit-row">
-              <span class="stack-fit-label">Orchestration</span>
-              <span class="stack-fit-tech">Kubernetes</span>
-            </div>
-          </div>
+        <h1>
+          Governed AI compute.<br>
+          <span class="gradient-text">Resilient autonomy.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Governed AI compute for the enterprise, and resilient autonomy for the tactical edge &mdash; built on one substrate. A thin client issues intents; the substrate enforces.
+        </p>
+        <div class="hero-actions">
+          <a href="command-control.html" class="btn btn-primary">AI Command &amp; Control &#8594;</a>
+          <a href="talonedge.html" class="btn btn-outline">TALON-EDGE</a>
         </div>
       </div>
-
-      <!-- Bottom CTA -->
-      <div class="stack-bottom">
-        <p class="stack-closer">GPU availability is the bottleneck. <strong>We make sure every GPU-hour counts.</strong></p>
-        <div class="stack-actions">
-          <a href="contact.html" class="btn btn-primary">Start a Conversation &#8594;</a>
-          <a href="services.html" class="btn btn-outline">Explore Services</a>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </section>
+
+  <!-- Product Lines -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Product Lines</span>
+        <h2>One Company, Two Operating Environments</h2>
+        <p>Different customers, different environments &mdash; and one engineering substrate underneath.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card product-card">
+          <span class="product-num">01</span>
+          <h3>AutoScaleWorks AI Command and Control</h3>
+          <span class="product-kicker">Enterprise and program GPU fleets</span>
+          <p>An operator console over a governed substrate: a heterogeneous GPU fleet across clouds and hardware, the agents that act on it, and a boundary that decides what each agent may do &mdash; with the reason recorded.</p>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Fleet, routing and utilization across clouds</li>
+            <li><span class="check">&#10003;</span> RAG, chat and agents on GPUs you choose</li>
+            <li><span class="check">&#10003;</span> Agent containment with a tamper-evident record</li>
+          </ul>
+          <a href="command-control.html" class="btn btn-outline">Explore AI Command &amp; Control &#8594;</a>
+        </div>
+        <div class="card product-card">
+          <span class="product-num">02</span>
+          <h3>TALON-EDGE Alternative Navigation</h3>
+          <span class="product-kicker">Tactical edge &mdash; air, ground, maritime</span>
+          <p>Resilient autonomy where the cloud cannot reach: alternative navigation that holds when GPS does not, collaborative targeting, and counter-swarm decision-making with no central node.</p>
+          <ul class="values-list">
+            <li><span class="check">&#10003;</span> Alternative navigation in PNT-denied conditions</li>
+            <li><span class="check">&#10003;</span> Collaborative aided target recognition</li>
+            <li><span class="check">&#10003;</span> Decentralized counter-swarm decision layer</li>
+          </ul>
+          <a href="talonedge.html" class="btn btn-outline">Explore TALON-EDGE &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Substrate -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">One Substrate</span>
+        <h2>What Both Products Share</h2>
+        <p>The same engineering underneath &mdash; which is why two product lines are not two companies.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-icon">&#128279;</div>
+          <h3>A capability graph</h3>
+          <p>What an agent or a platform may reach is decided from a graph of capabilities, not a rule list. The same decision applies to a tool call on a GPU fleet and a permitted action at the edge.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128207;</div>
+          <h3>Measured, not asserted</h3>
+          <p>Every claim is backed by a test harness &mdash; energy, decision time, behaviour under denial. Nothing ships as an adjective.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128220;</div>
+          <h3>A record that survives audit</h3>
+          <p>One record per decision, with the basis that produced it, tamper-evident and verifiable offline. Evidence, rather than a log.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128421;</div>
+          <h3>Runs where the hardware is</h3>
+          <p>A laptop, a private data centre, multiple clouds, or a small airframe. The boundary never assumes a network it may not have.</p>
+        </div>
+      </div>
+      <p class="statement"><strong>Two markets, one substrate.</strong> The governance layer built for a GPU fleet is the same layer that decides what an autonomous platform may do.</p>
+    </div>
+  </section>
+
+  <!-- Status -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where We Are</span>
+        <h2>What Runs Today, and What Comes Next</h2>
+        <p>Saying plainly what is not yet built is what makes the rest believable.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card lane">
+          <h3><span class="lane-dot"></span>Running today</h3>
+          <p>Governed agent sandboxes live across multiple public clouds and local substrates behind a single broker; governed replay and live decision streams in the console; and the core of the PNT-denied navigation work implemented and scored against its program requirements.</p>
+        </div>
+        <div class="card lane lane-next">
+          <h3><span class="lane-dot"></span>Specified, not yet built</h3>
+          <p>Large-language-model training and inference on the fleet; microVM and bare-metal substrates; the full alternative-navigation system around its proven core; and patent-pending encryption for the wire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Request a Briefing</h2>
+        <p>Architecture, results and demonstrations are available to program offices and enterprise teams under NDA.</p>
+        <a href="contact.html" class="btn btn-primary">Contact &#8594;</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="footer stack-footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-text">&copy; 2026 AutoscaleWorks</span>
+        <span class="footer-text">&copy; 2026 AutoScaleWorks.ai Corp.</span>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="command-control.html">AI Command &amp; Control</a></li>
           <li><a href="talonedge.html">TALON-EDGE</a></li>
-          <li><a href="decks.html">Decks</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
