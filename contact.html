@@ -6,12 +6,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <title>Contact — AutoscaleWorks</title>
-  <meta name="description" content="Get in touch with AutoscaleWorks. Let's discuss your AI infrastructure project, LLM deployment, or security system needs.">
+  <title>Contact — AutoScaleWorks.ai</title>
+  <meta name="description" content="Contact AutoScaleWorks.ai about AI Command and Control, TALON-EDGE, or a program partnership. Briefings available under NDA.">
+  <meta property="og:title" content="Contact — AutoScaleWorks.ai">
+  <meta property="og:description" content="Contact AutoScaleWorks.ai about AI Command and Control, TALON-EDGE, or a program partnership. Briefings available under NDA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autoscaleworks.ai/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?t=1772656196">
+  <link rel="stylesheet" href="css/style.css?t=1790000000">
 </head>
 <body>
 
@@ -24,11 +28,9 @@
       <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="command-control.html">AI Command &amp; Control</a></li>
         <li><a href="talonedge.html">TALON-EDGE</a></li>
-        <li><a href="decks.html">Decks</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav-cta active">Contact</a></li>
       </ul>
     </div>
@@ -38,8 +40,8 @@
   <section class="page-header">
     <div class="container">
       <span class="section-label">Contact</span>
-      <h1>Let's Talk Infrastructure</h1>
-      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+      <h1>Request a Briefing</h1>
+      <p>Tell us about your fleet or your program and we&rsquo;ll get back to you within 24 hours.</p>
     </div>
   </section>
 
@@ -47,34 +49,32 @@
   <section>
     <div class="container">
       <div class="contact-grid">
-        <form class="contact-form" action="#" method="POST">
+        <form class="contact-form" id="contact-form" action="mailto:mike@autoscaleworks.ai" method="POST" enctype="text/plain">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            <input type="email" id="email" name="email" placeholder="you@organization.com" required>
           </div>
           <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Your company (optional)">
+            <label for="company">Organization</label>
+            <input type="text" id="company" name="company" placeholder="Your organization (optional)">
           </div>
           <div class="form-group">
             <label for="service">What are you interested in?</label>
             <select id="service" name="service">
-              <option value="">Select a service...</option>
-              <option value="talon-edge">TALON-EDGE Drone GPU Optimization</option>
-              <option value="cost-analysis">GPU Cost Analysis &amp; Cost Optimization</option>
-              <option value="ai-os">AI OS &amp; Multi-Substrate Orchestration</option>
-              <option value="heterogeneous-gpu">Heterogeneous GPU Orchestration</option>
-              <option value="advisory">Architecture Advisory</option>
+              <option value="">Select one...</option>
+              <option value="command-control">AI Command and Control</option>
+              <option value="talon-edge">TALON-EDGE Alternative Navigation</option>
+              <option value="program">Program office partnership</option>
               <option value="other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" placeholder="Describe your project, current setup, goals, and timeline..." required></textarea>
+            <label for="message">Tell us about your fleet or program</label>
+            <textarea id="message" name="message" placeholder="What you run today, what you need governed or fielded, and your timeline..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message &#8594;</button>
         </form>
@@ -82,7 +82,7 @@
         <div class="contact-info">
           <div>
             <h3 style="margin-bottom: 1.5rem;">Contact</h3>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Whether you're exploring self-hosted LLMs, planning a GPU cluster migration, or building intelligent security systems &mdash; we'd love to hear about your project.</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Whether you have a GPU fleet and agents to govern, or a platform that must operate without GPS &mdash; architecture, results and demonstrations are available under NDA.</p>
           </div>
 
           <div class="contact-item">
@@ -118,14 +118,10 @@
           </div>
 
           <div style="margin-top: 1rem;">
-            <h3 style="margin-bottom: 1rem;">Typical Engagements</h3>
+            <h3 style="margin-bottom: 1rem;">Product Lines</h3>
             <div class="card-tags">
-              <span class="tag">Drone GPU Optimization</span>
-              <span class="tag">Cost Analysis</span>
-              <span class="tag">Cost Optimization</span>
-              <span class="tag">AI OS</span>
-              <span class="tag">Multi-Substrate</span>
-              <span class="tag">Heterogeneous GPU</span>
+              <span class="tag">AI Command &amp; Control</span>
+              <span class="tag">TALON-EDGE</span>
             </div>
           </div>
         </div>
@@ -142,20 +138,20 @@
       </div>
       <div class="grid-2">
         <div class="card">
-          <h3>What GPU types do you optimize across?</h3>
-          <p>Any of them. Our AI OS treats compute as a heterogeneous, multi-substrate fabric &mdash; NVIDIA (L4, A100, H100), AMD, edge accelerators, and the sub-$350 GPUs targeted by TALON-EDGE &mdash; and routes work to whatever hardware delivers the best utilization and cost.</p>
+          <h3>Why two product lines in one company?</h3>
+          <p>Because they share one substrate. The capability graph, the measurement harness and the decision record are the same; only the deployment and the domain differ.</p>
         </div>
         <div class="card">
-          <h3>How does TALON-EDGE drone GPU optimization work?</h3>
-          <p>TALON-EDGE turns a drone swarm into a distributed compute fabric. Each drone advertises its compute capability, work is routed to the best available GPU in the mesh, and if a drone is lost the swarm automatically redistributes its load &mdash; no manual reconfiguration.</p>
+          <h3>Does AI Command and Control replace hosted model services?</h3>
+          <p>No. Use hosted models where they are authorized and connected, and your own GPUs where they are not &mdash; with one governance layer over both.</p>
         </div>
         <div class="card">
-          <h3>What does GPU cost analysis and optimization cover?</h3>
-          <p>We baseline your current GPU spend and utilization, surface idle and stranded capacity, and continuously optimize placement across substrates. The goal is measured outcomes &mdash; higher utilization and lower effective cost per unit of work.</p>
+          <h3>Where does it run?</h3>
+          <p>On a laptop, across multiple public clouds and local Kubernetes today, with microVM and bare-metal substrates planned. The governance layer is the same on each.</p>
         </div>
         <div class="card">
-          <h3>What is the AI OS and multi-substrate orchestration?</h3>
-          <p>The AI OS is a substrate-agnostic control plane that schedules AI workloads across heterogeneous GPUs, cloud, on-prem, and edge as a single fabric. It abstracts the hardware so the same workload runs wherever it is most efficient at any moment.</p>
+          <h3>What is TALON-EDGE today?</h3>
+          <p>A proven core &mdash; frame reconciliation under denied positioning, collaborative target recognition, compute-aware swarm routing and a decentralized counter-swarm layer &mdash; with the wider navigation system around it next.</p>
         </div>
       </div>
     </div>
@@ -165,8 +161,8 @@
   <section>
     <div class="container">
       <div class="cta-section">
-        <h2>Ready to Scale Your AI?</h2>
-        <p>From proof-of-concept to production GPU clusters. Let's build your AI infrastructure together.</p>
+        <h2>Prefer Email?</h2>
+        <p>Write to us directly and we&rsquo;ll set up a briefing.</p>
         <a href="mailto:info@autoscaleworks.ai" class="btn btn-primary">Email Us Directly &#8594;</a>
       </div>
     </div>
@@ -176,18 +172,33 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-text">&copy; 2025 AutoscaleWorks</span>
+        <span class="footer-text">&copy; 2026 AutoScaleWorks.ai Corp.</span>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="command-control.html">AI Command &amp; Control</a></li>
           <li><a href="talonedge.html">TALON-EDGE</a></li>
-          <li><a href="decks.html">Decks</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Static site: hand the enquiry to the visitor's mail client, pre-filled.
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var interest = f.service.options[f.service.selectedIndex];
+      var subject = 'Briefing request' + (f.service.value ? ' — ' + interest.text : '') + ' — ' + f.name.value;
+      var body = 'Name: ' + f.name.value + '\n' +
+                 'Email: ' + f.email.value + '\n' +
+                 'Organization: ' + (f.company.value || '-') + '\n' +
+                 'Interest: ' + (f.service.value ? interest.text : '-') + '\n\n' +
+                 f.message.value;
+      window.location.href = 'mailto:mike@autoscaleworks.ai?subject=' + encodeURIComponent(subject) +
+                             '&body=' + encodeURIComponent(body);
+    });
+  </script>
 
 </body>
 </html>
